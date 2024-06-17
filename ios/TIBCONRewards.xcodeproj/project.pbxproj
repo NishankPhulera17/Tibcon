@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		005EFA06328442D69CFD157C /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6BB490790024A1D944512E3 /* Poppins-BlackItalic.ttf */; };
-		00E356F31AD99517003FC87E /* TibconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TibconTests.m */; };
+		00E356F31AD99517003FC87E /* TIBCONRewardsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TIBCONRewardsTests.m */; };
 		0B5E7FD736894E34B199C899 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEAC1C540BDA408D917124E6 /* Poppins-Bold.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -64,21 +64,21 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = Tibcon;
+			remoteInfo = "TIBCONRewards";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* TibconTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TibconTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* TIBCONRewardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TIBCONRewardsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* TibconTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TibconTests.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* TIBCONRewardsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TIBCONRewardsTests.m"; sourceTree = "<group>"; };
 		0E1B8BF0838049D291ECD299 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* TIBCON Rewards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TIBCON Rewards.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Tibcon/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = Tibcon/AppDelegate.mm; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Tibcon/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tibcon/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Tibcon/main.m; sourceTree = "<group>"; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "TIBCONRewards/AppDelegate.h"; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = "TIBCONRewards/AppDelegate.mm"; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "TIBCONRewards/Images.xcassets"; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "TIBCONRewards/Info.plist"; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "TIBCONRewards/main.m"; sourceTree = "<group>"; };
 		1AE6820C23DE453CAB52F952 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Medium.ttf"; path = "../assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		1E3DA997340647E68B5EABD5 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Italic.ttf"; path = "../assets/fonts/Poppins-Italic.ttf"; sourceTree = "<group>"; };
 		2621FF15BCC64D26969A75F2 /* Poppins-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Light.ttf"; path = "../assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; };
@@ -89,24 +89,24 @@
 		4ECDB724FABA4B5C8ABD00FD /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraLightItalic.ttf"; path = "../assets/fonts/Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		5109BE1CC45D4D228F5905C8 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-MediumItalic.ttf"; path = "../assets/fonts/Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
 		6ADA9E2354B743C393570BC0 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-BoldItalic.ttf"; path = "../assets/fonts/Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
-		79D654BA924B1589326AA749 /* Pods-Tibcon-TibconTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tibcon-TibconTests.debug.xcconfig"; path = "Target Support Files/Pods-Tibcon-TibconTests/Pods-Tibcon-TibconTests.debug.xcconfig"; sourceTree = "<group>"; };
+		79D654BA924B1589326AA749 /* Pods-TIBCONRewards-TIBCONRewardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TIBCONRewards-TIBCONRewardsTests.debug.xcconfig"; path = "Target Support Files/Pods-TIBCONRewards-TIBCONRewardsTests/Pods-TIBCONRewards-TIBCONRewardsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7CD9F36D1CDD42B4A722D9A1 /* Poppins-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Black.ttf"; path = "../assets/fonts/Poppins-Black.ttf"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Tibcon/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "TIBCONRewards/LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		884A6DE7592C4EE0B1A9E605 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Thin.ttf"; path = "../assets/fonts/Poppins-Thin.ttf"; sourceTree = "<group>"; };
 		8DB51198E9EA4355BC888C2C /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraLight.ttf"; path = "../assets/fonts/Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
-		93F16DC083E939C0851E0128 /* Pods-Tibcon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tibcon.debug.xcconfig"; path = "Target Support Files/Pods-Tibcon/Pods-Tibcon.debug.xcconfig"; sourceTree = "<group>"; };
+		93F16DC083E939C0851E0128 /* Pods-TIBCONRewards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TIBCONRewards.debug.xcconfig"; path = "Target Support Files/Pods-TIBCONRewards/Pods-TIBCONRewards.debug.xcconfig"; sourceTree = "<group>"; };
 		B6BB490790024A1D944512E3 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-BlackItalic.ttf"; path = "../assets/fonts/Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
 		B7146FCA9701416BBB4981A0 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ThinItalic.ttf"; path = "../assets/fonts/Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
 		BF597A940C684E27BC749E32 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraBoldItalic.ttf"; path = "../assets/fonts/Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
-		C3989FDBA78A1976B0B2A19A /* Pods-Tibcon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tibcon.release.xcconfig"; path = "Target Support Files/Pods-Tibcon/Pods-Tibcon.release.xcconfig"; sourceTree = "<group>"; };
-		DA5C77B66CA720F9A6FF74E6 /* Pods-Tibcon-TibconTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tibcon-TibconTests.release.xcconfig"; path = "Target Support Files/Pods-Tibcon-TibconTests/Pods-Tibcon-TibconTests.release.xcconfig"; sourceTree = "<group>"; };
+		C3989FDBA78A1976B0B2A19A /* Pods-TIBCONRewards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TIBCONRewards.release.xcconfig"; path = "Target Support Files/Pods-TIBCONRewards/Pods-TIBCONRewards.release.xcconfig"; sourceTree = "<group>"; };
+		DA5C77B66CA720F9A6FF74E6 /* Pods-TIBCONRewards-TIBCONRewardsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TIBCONRewards-TIBCONRewardsTests.release.xcconfig"; path = "Target Support Files/Pods-TIBCONRewards-TIBCONRewardsTests/Pods-TIBCONRewards-TIBCONRewardsTests.release.xcconfig"; sourceTree = "<group>"; };
 		E245633C7E561AF902E4B366 /* Pods_Tibcon_TibconTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tibcon_TibconTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9222AD72BA4338E006B4478 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E92D73692B3B5093009D7BC1 /* hermes.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = hermes.xcframework; path = "Pods/hermes-engine/destroot/Library/Frameworks/universal/hermes.xcframework"; sourceTree = "<group>"; };
 		E92D736B2B3B50B3009D7BC1 /* libReact-hermes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-hermes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92D736D2B3B549D009D7BC1 /* OpenSSL.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OpenSSL.xcframework; path = "Pods/OpenSSL-Universal/Frameworks/OpenSSL.xcframework"; sourceTree = "<group>"; };
 		E92EE8E92B4156DE00162902 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E97F37B52B3AE9B500D662DB /* Tibcon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Tibcon.entitlements; path = Tibcon/Tibcon.entitlements; sourceTree = "<group>"; };
+		E97F37B52B3AE9B500D662DB /* TIBCONRewards.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = TIBCONRewards.entitlements; path = TIBCONRewards/TIBCONRewards.entitlements; sourceTree = "<group>"; };
 		E99B6EA22B3CA8A600D14E1F /* reacthermes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = reacthermes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9B14A9F2A8CDED1004DE909 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
 		E9B14AA02A8CDED1004DE909 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		E9B14AAF2A8CDED1004DE909 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		E9B14AB02A8CDED1004DE909 /* FontAwesome6_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Brands.ttf; sourceTree = "<group>"; };
 		E9B14AB12A8CDED1004DE909 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
-		E9B14AC52A8E3BD2004DE909 /* Tibcon-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tibcon-Bridging-Header.h"; sourceTree = "<group>"; };
+		E9B14AC52A8E3BD2004DE909 /* TIBCONRewards-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TIBCONRewards-Bridging-Header.h"; sourceTree = "<group>"; };
 		E9B14AC62A8E3BD3004DE909 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		E9F2F99E2BA97CF60008C98C /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		E9F2F9A02BA97CFE0008C98C /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
@@ -156,13 +156,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* TibconTests */ = {
+		00E356EF1AD99517003FC87E /* TIBCONRewardsTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* TibconTests.m */,
+				00E356F21AD99517003FC87E /* TIBCONRewardsTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = TibconTests;
+			path = "TIBCONRewardsTests";
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -198,10 +198,10 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* Tibcon */ = {
+		13B07FAE1A68108700A75B9A /* TIBCONRewards */ = {
 			isa = PBXGroup;
 			children = (
-				E97F37B52B3AE9B500D662DB /* Tibcon.entitlements */,
+				E97F37B52B3AE9B500D662DB /* TIBCONRewards.entitlements */,
 				E9B14A9E2A8CDED1004DE909 /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
@@ -210,7 +210,7 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = Tibcon;
+			name = "TIBCONRewards";
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -231,7 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				E9B14AC62A8E3BD3004DE909 /* File.swift */,
-				E9B14AC52A8E3BD2004DE909 /* Tibcon-Bridging-Header.h */,
+				E9B14AC52A8E3BD2004DE909 /* TIBCONRewards-Bridging-Header.h */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -243,9 +243,9 @@
 				E9F2F99E2BA97CF60008C98C /* main.jsbundle */,
 				E9222AD72BA4338E006B4478 /* GoogleService-Info.plist */,
 				E92EE8E92B4156DE00162902 /* Assets.xcassets */,
-				13B07FAE1A68108700A75B9A /* Tibcon */,
+				13B07FAE1A68108700A75B9A /* TIBCONRewards */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* TibconTests */,
+				00E356EF1AD99517003FC87E /* TIBCONRewardsTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
@@ -260,7 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				13B07F961A680F5B00A75B9A /* TIBCON Rewards.app */,
-				00E356EE1AD99517003FC87E /* TibconTests.xctest */,
+				00E356EE1AD99517003FC87E /* TIBCONRewardsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -268,10 +268,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				93F16DC083E939C0851E0128 /* Pods-Tibcon.debug.xcconfig */,
-				C3989FDBA78A1976B0B2A19A /* Pods-Tibcon.release.xcconfig */,
-				79D654BA924B1589326AA749 /* Pods-Tibcon-TibconTests.debug.xcconfig */,
-				DA5C77B66CA720F9A6FF74E6 /* Pods-Tibcon-TibconTests.release.xcconfig */,
+				93F16DC083E939C0851E0128 /* Pods-TIBCONRewards.debug.xcconfig */,
+				C3989FDBA78A1976B0B2A19A /* Pods-TIBCONRewards.release.xcconfig */,
+				79D654BA924B1589326AA749 /* Pods-TIBCONRewards-TIBCONRewardsTests.debug.xcconfig */,
+				DA5C77B66CA720F9A6FF74E6 /* Pods-TIBCONRewards-TIBCONRewardsTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -306,9 +306,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* TibconTests */ = {
+		00E356ED1AD99517003FC87E /* TIBCONRewardsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "TibconTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "TIBCONRewardsTests" */;
 			buildPhases = (
 				45964017E8ED779BD5CF69DC /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -321,14 +321,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = TibconTests;
-			productName = TibconTests;
-			productReference = 00E356EE1AD99517003FC87E /* TibconTests.xctest */;
+			name = TIBCONRewardsTests;
+			productName = TIBCONRewardsTests;
+			productReference = 00E356EE1AD99517003FC87E /* TIBCONRewardsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* Tibcon */ = {
+		13B07F861A680F5B00A75B9A /* TIBCONRewards */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Tibcon" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TIBCONRewards" */;
 			buildPhases = (
 				FFE6915D2E55942CDE375804 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -344,8 +344,8 @@
 			);
 			dependencies = (
 			);
-			name = Tibcon;
-			productName = Tibcon;
+			name = "TIBCONRewards";
+			productName = "TIBCONRewards";
 			productReference = 13B07F961A680F5B00A75B9A /* TIBCON Rewards.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -367,7 +367,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Tibcon" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "TIBCONRewards" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -383,8 +383,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* Tibcon */,
-				00E356ED1AD99517003FC87E /* TibconTests */,
+				13B07F861A680F5B00A75B9A /* TIBCONRewards */,
+				00E356ED1AD99517003FC87E /* TIBCONRewardsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -494,7 +494,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Tibcon-TibconTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-TIBCONRewards-TIBCONRewardsTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -507,15 +507,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Tibcon-TibconTests/Pods-Tibcon-TibconTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-TIBCONRewards-TIBCONRewardsTests/Pods-TIBCONRewards-TIBCONRewardsTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Tibcon-TibconTests/Pods-Tibcon-TibconTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-TIBCONRewards-TIBCONRewardsTests/Pods-TIBCONRewards-TIBCONRewardsTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tibcon-TibconTests/Pods-Tibcon-TibconTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TIBCONRewards-TIBCONRewardsTests/Pods-TIBCONRewards-TIBCONRewardsTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C92962A1440377EB4C8E017A /* [CP-User] [RNFB] Crashlytics Configuration */ = {
@@ -538,15 +538,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Tibcon/Pods-Tibcon-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-TIBCONRewards/Pods-TIBCONRewards-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Tibcon/Pods-Tibcon-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-TIBCONRewards/Pods-TIBCONRewards-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tibcon/Pods-Tibcon-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TIBCONRewards/Pods-TIBCONRewards-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -583,7 +583,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Tibcon-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-TIBCONRewards-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -597,7 +597,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* TibconTests.m in Sources */,
+				00E356F31AD99517003FC87E /* TIBCONRewardsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,7 +616,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* Tibcon */;
+			target = 13B07F861A680F5B00A75B9A /* TIBCONRewards */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -624,7 +624,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79D654BA924B1589326AA749 /* Pods-Tibcon-TibconTests.debug.xcconfig */;
+			baseConfigurationReference = 79D654BA924B1589326AA749 /* Pods-TIBCONRewards-TIBCONRewardsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -633,7 +633,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = TibconTests/Info.plist;
+				INFOPLIST_FILE = "TIBCONRewardsTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -647,19 +647,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Genefied.TibconRewards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tibcon.app/Tibcon";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TIBCONRewards.app/TIBCONRewards";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA5C77B66CA720F9A6FF74E6 /* Pods-Tibcon-TibconTests.release.xcconfig */;
+			baseConfigurationReference = DA5C77B66CA720F9A6FF74E6 /* Pods-TIBCONRewards-TIBCONRewardsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 9D932R2PWR;
-				INFOPLIST_FILE = TibconTests/Info.plist;
+				INFOPLIST_FILE = "TIBCONRewardsTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -673,25 +673,25 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Genefied.TibconRewards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tibcon.app/Tibcon";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TIBCONRewards.app/TIBCONRewards";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93F16DC083E939C0851E0128 /* Pods-Tibcon.debug.xcconfig */;
+			baseConfigurationReference = 93F16DC083E939C0851E0128 /* Pods-TIBCONRewards.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Tibcon/Tibcon.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TIBCONRewards/TIBCONRewards.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9D932R2PWR;
 				ENABLE_BITCODE = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				INFOPLIST_FILE = Tibcon/Info.plist;
+				INFOPLIST_FILE = "TIBCONRewards/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "TIBCON Rewards";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -708,7 +708,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Genefied.TibconRewards;
 				PRODUCT_NAME = "TIBCON Rewards";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Tibcon-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "TIBCONRewards-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -718,18 +718,18 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C3989FDBA78A1976B0B2A19A /* Pods-Tibcon.release.xcconfig */;
+			baseConfigurationReference = C3989FDBA78A1976B0B2A19A /* Pods-TIBCONRewards.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Tibcon/Tibcon.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TIBCONRewards/TIBCONRewards.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9D932R2PWR;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				INFOPLIST_FILE = Tibcon/Info.plist;
+				INFOPLIST_FILE = "TIBCONRewards/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "TIBCON Rewards";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -746,7 +746,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Genefied.TibconRewards;
 				PRODUCT_NAME = "TIBCON Rewards";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Tibcon-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "TIBCONRewards-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -916,7 +916,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "TibconTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "TIBCONRewardsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -925,7 +925,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Tibcon" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TIBCONRewards" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -934,7 +934,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Tibcon" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "TIBCONRewards" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

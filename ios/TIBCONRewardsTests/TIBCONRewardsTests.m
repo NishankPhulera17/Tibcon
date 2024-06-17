@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface TibconTests : XCTestCase
+@interface TIBCONRewardsTests : XCTestCase
 
 @end
 
-@implementation TibconTests
+@implementation TIBCONRewardsTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {

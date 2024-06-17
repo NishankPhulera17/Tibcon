@@ -43,27 +43,21 @@ const OtpLogin = ({ navigation, route }) => {
   const primaryThemeColor = useSelector(
     state => state.apptheme.primaryThemeColor,
   )
-    ? useSelector(state => state.apptheme.primaryThemeColor)
-    : '#FF9B00';
+    
   const secondaryThemeColor = useSelector(
     state => state.apptheme.secondaryThemeColor,
   )
-    ? useSelector(state => state.apptheme.secondaryThemeColor)
-    : '#FFB533';
   const ternaryThemeColor = useSelector(
     state => state.apptheme.ternaryThemeColor,
   )
-    ? useSelector(state => state.apptheme.ternaryThemeColor)
-    : 'grey';
+    
   const buttonThemeColor = useSelector(
     state => state.apptheme.ternaryThemeColor,
   )
-    ? useSelector(state => state.apptheme.ternaryThemeColor)
-    : '#ef6110';
+   
 
   const icon = useSelector(state => state.apptheme.icon)
-    ? useSelector(state => state.apptheme.icon)
-    : require('../../../assets/images/demoIcon.png');
+   
 
   // ------------------------------------------------
   const focused = useIsFocused()

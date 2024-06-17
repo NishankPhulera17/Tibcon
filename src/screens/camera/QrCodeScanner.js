@@ -504,11 +504,11 @@ const QrCodeScanner = ({ navigation,route }) => {
   // checking for response time
   useEffect(()=>{
     console.log("responseTime" ,(responseTime))
-    if(responseTime>1000)
+    if(responseTime>4000)
     {
       setIsSlowInternet(true)
     }
-    if(responseTime<1000)
+    if(responseTime<4000)
     {
       setIsSlowInternet(false)
     }

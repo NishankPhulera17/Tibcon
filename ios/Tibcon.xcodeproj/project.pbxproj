@@ -32,6 +32,7 @@
 		DA5D18081DF44D2E90FAD56A /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DDCCDBC21DE445887EF6F40 /* Poppins-LightItalic.ttf */; };
 		E9222AD82BA4338E006B4478 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9222AD72BA4338E006B4478 /* GoogleService-Info.plist */; };
 		E92EE8EA2B4156DE00162902 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E92EE8E92B4156DE00162902 /* Assets.xcassets */; };
+		E96D62CE2C20A5390029A0FF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB61A68108700A75B9A /* Info.plist */; };
 		E9B14AB22A8CDED1004DE909 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9B14A9F2A8CDED1004DE909 /* Fontisto.ttf */; };
 		E9B14AB32A8CDED1004DE909 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9B14AA02A8CDED1004DE909 /* Octicons.ttf */; };
 		E9B14AB42A8CDED1004DE909 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9B14AA12A8CDED1004DE909 /* Feather.ttf */; };
@@ -72,7 +73,7 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* TibconTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TibconTests.m; sourceTree = "<group>"; };
 		0E1B8BF0838049D291ECD299 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* Tibcon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tibcon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* TIBCON Rewards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TIBCON Rewards.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Tibcon/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = Tibcon/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Tibcon/Images.xcassets; sourceTree = "<group>"; };
@@ -258,7 +259,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* Tibcon.app */,
+				13B07F961A680F5B00A75B9A /* TIBCON Rewards.app */,
 				00E356EE1AD99517003FC87E /* TibconTests.xctest */,
 			);
 			name = Products;
@@ -345,7 +346,7 @@
 			);
 			name = Tibcon;
 			productName = Tibcon;
-			productReference = 13B07F961A680F5B00A75B9A /* Tibcon.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* TIBCON Rewards.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -408,6 +409,7 @@
 				E9B14AC02A8CDED1004DE909 /* EvilIcons.ttf in Resources */,
 				E9B14AB92A8CDED1004DE909 /* AntDesign.ttf in Resources */,
 				E9B14ABA2A8CDED1004DE909 /* Foundation.ttf in Resources */,
+				E96D62CE2C20A5390029A0FF /* Info.plist in Resources */,
 				E9B14ABC2A8CDED1004DE909 /* FontAwesome5_Solid.ttf in Resources */,
 				3CA1566E5C7B4EE1A2F7AC75 /* Poppins-Black.ttf in Resources */,
 				005EFA06328442D69CFD157C /* Poppins-BlackItalic.ttf in Resources */,
@@ -643,7 +645,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Tibcon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Genefied.TibconRewards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tibcon.app/Tibcon";
 			};
@@ -669,7 +671,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Tibcon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Genefied.TibconRewards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tibcon.app/Tibcon";
 			};
@@ -690,7 +692,7 @@
 				ENABLE_BITCODE = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = Tibcon/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Tibcon;
+				INFOPLIST_KEY_CFBundleDisplayName = "TIBCON Rewards";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -704,7 +706,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Genefied.TibconRewards;
-				PRODUCT_NAME = Tibcon;
+				PRODUCT_NAME = "TIBCON Rewards";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tibcon-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -728,7 +730,7 @@
 				DEVELOPMENT_TEAM = 9D932R2PWR;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = Tibcon/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Tibcon;
+				INFOPLIST_KEY_CFBundleDisplayName = "TIBCON Rewards";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -742,7 +744,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Genefied.TibconRewards;
-				PRODUCT_NAME = Tibcon;
+				PRODUCT_NAME = "TIBCON Rewards";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tibcon-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -828,6 +830,7 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
+				PRODUCT_NAME = "TIBCON Rewards";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 			};
@@ -902,6 +905,7 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
+				PRODUCT_NAME = "TIBCON Rewards";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

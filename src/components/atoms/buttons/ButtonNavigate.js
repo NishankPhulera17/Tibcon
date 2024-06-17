@@ -11,8 +11,7 @@ const ButtonNavigate = props => {
   const ternaryThemeColor = useSelector(
     state => state.apptheme.ternaryThemeColor,
   )
-    ? useSelector(state => state.apptheme.ternaryThemeColor)
-    : 'grey';
+    
   const backgroundColor = props.backgroundColor ? props.backgroundColor : ternaryThemeColor
   // prop to manipulate background color of button
   const style = props.style;

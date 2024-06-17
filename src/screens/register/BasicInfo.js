@@ -341,7 +341,7 @@ const BasicInfo = ({ navigation, route }) => {
       // console.log("data after submitting form", registerUserData)
       if (registerUserData.success) {
         setSuccess(true)
-        setMessage("Thank you for joining Tibcon Loyalty program, we will get back to you within 1-2 working days")
+        setMessage("Thank you for joining Tibcon Loyalty program")
         setModalTitle("Greetings")
       }
       setHideButton(false)

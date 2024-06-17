@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, Text, Image, ImageBackground, PermissionsAndroid, Platform, Alert, Linking, BackHandler } from 'react-native';
 import { useGetAppThemeDataMutation } from '../../apiServices/appTheme/AppThemeApi';
@@ -74,7 +75,12 @@ const Splash = ({ navigation }) => {
   {
      currentVersion = VersionCheck.getCurrentVersion();
     console.log("current version check",currentVersion)
-    dispatch(setAppVersion(currentVersion))
+    try{
+      dispatch(setAppVersion(currentVersion))
+    }
+    catch(e){
+      console.log("error in dispatching app version")
+    }
 
 
   }
@@ -174,7 +180,7 @@ const Splash = ({ navigation }) => {
     if(isConnected.isConnected)
     {
 
-    getMinVersionSupportFunc(currentVersion)
+    currentVersion &&  getMinVersionSupportFunc(String(currentVersion))
 
       const fetchTerms = async () => {
         // const credentials = await Keychain.getGenericPassword();
@@ -204,7 +210,14 @@ const Splash = ({ navigation }) => {
   useEffect(() => {
     if (getTermsData) {
       // console.log("getTermsData", getTermsData.body.data?.[0]?.files[0]);
-      dispatch(setTerms(getTermsData.body.data?.[0]?.files[0]))
+      try{
+
+        dispatch(setTerms(getTermsData.body.data?.[0]?.files[0]))
+      }
+      catch(e)
+      {
+        console.log("error in dispatching terms")
+      }
     }
     else if (getTermsError) {
       // console.log("gettermserror", getTermsError)
@@ -224,12 +237,19 @@ const Splash = ({ navigation }) => {
       // console.log("getDashboardData", getDashboardData)
       if(parsedJsonValue)
       {
-      dispatch(setAppUserId(parsedJsonValue.user_type_id))
+        try{
+          dispatch(setAppUserId(parsedJsonValue.user_type_id))
       dispatch(setAppUserName(parsedJsonValue.name))
       dispatch(setAppUserType(parsedJsonValue.user_type))
       dispatch(setUserData(parsedJsonValue))
       dispatch(setId(parsedJsonValue.id))
       dispatch(setDashboardData(getDashboardData?.body?.app_dashboard))
+        }
+        catch(e)
+        {
+          console.log("error in dispatching parsedJsonValue")
+        }
+      
       setShowLoading(false)
       
       parsedJsonValue && getAppMenuFunc(parsedJsonValue?.token)
@@ -261,8 +281,14 @@ const Splash = ({ navigation }) => {
         const tempDrawerData = getAppMenuData.body.filter((item) => {
           return item.user_type === parsedJsonValue.user_type
         })
+        try{
         tempDrawerData &&  dispatch(setDrawerData(tempDrawerData[0]))
-      getFormData  && getAppMenuData && getDashboardData && getWorkflowData && getBannerData && navigation.reset({ index: '0', routes: [{ name: 'Dashboard' }] })
+        }
+        catch(e)
+        {
+          console.log("error in dispatching drawer data")
+        }
+      getFormData && minVersionSupport && getAppMenuData && getDashboardData && getWorkflowData && getBannerData && navigation.reset({ index: '0', routes: [{ name: 'Dashboard' }] })
 
       }
       
@@ -276,7 +302,13 @@ const Splash = ({ navigation }) => {
   useEffect(() => {
     if (getPolicyData) {
       // console.log("getPolicyData123>>>>>>>>>>>>>>>>>>>", getPolicyData);
+      try{
       dispatch(setPolicy(getPolicyData?.body?.data?.[0]?.files?.[0]))
+      }
+      catch(e)
+      {
+        console.log("error in dispatching policy data")
+      }
     }
     else if (getPolicyError) {
       setError(true)
@@ -292,9 +324,16 @@ const Splash = ({ navigation }) => {
   useEffect(() => {
     if (getFormData) {
       // console.log("getFormData", getFormData?.body)
-      dispatch(setWarrantyForm(getFormData?.body?.template))
-      dispatch(setWarrantyFormId(getFormData?.body?.form_template_id))
-      parsedJsonValue && getDashboardFunc(parsedJsonValue?.token)
+      try{
+        dispatch(setWarrantyForm(getFormData?.body?.template))
+        dispatch(setWarrantyFormId(getFormData?.body?.form_template_id))
+        parsedJsonValue && getDashboardFunc(parsedJsonValue?.token)
+      }
+      catch(e)
+      {
+        console.log("Error in dispatching warranty forms")
+      }
+     
 
 
     }
@@ -308,14 +347,28 @@ const Splash = ({ navigation }) => {
   useEffect(() => {
     if (getWorkflowData) {
       if (getWorkflowData?.length === 1 && getWorkflowData[0] === "Genuinity") {
-        dispatch(setIsGenuinityOnly())
+        try{
+          
+          dispatch(setIsGenuinityOnly())
+        }
+        catch(e)
+        {
+          console.log("error in dispatching genuinity")
+        }
       }
       const removedWorkFlow = getWorkflowData?.body[0]?.program.filter((item, index) => {
         return item !== "Warranty"
       })
       // console.log("getWorkflowData", getWorkflowData)
-      dispatch(setProgram(removedWorkFlow))
-      dispatch(setWorkflow(getWorkflowData?.body[0]?.workflow_id))
+      try{
+        dispatch(setProgram(removedWorkFlow))
+        dispatch(setWorkflow(getWorkflowData?.body[0]?.workflow_id))
+
+      }
+      catch(e)
+      {
+        console.log("error in dispatching workflow and program")
+      }
       const form_type = "2"
         parsedJsonValue && getFormFunc({ form_type:form_type, token:parsedJsonValue?.token })
 
@@ -334,7 +387,14 @@ const Splash = ({ navigation }) => {
       const images = Object.values(getBannerData?.body).map((item) => {
         return item.image[0]
       })
-      dispatch(setBannerData(images))
+      try{
+
+        dispatch(setBannerData(images))
+      }
+      catch(e)
+      {
+        console.log("error in dispatching banner data")
+      }
       setShowLoading(false)
       parsedJsonValue && getWorkflowFunc({userId:parsedJsonValue?.user_type_id, token:parsedJsonValue?.token })
     }
@@ -417,11 +477,25 @@ const Splash = ({ navigation }) => {
         }
       }).then(function (success) {
         // setLocationCheckVisited(true)
-        dispatch(setLocationEnabled(true))
+        try{
+
+          dispatch(setLocationEnabled(true))
+        }
+        catch(e)
+        {
+          console.log("error in dispatching location enabled")
+        }
         setfetchLocation(true)
          // success => {alreadyEnabled: false, enabled: true, status: "enabled"}
       }).catch((error) => {
-        dispatch(setLocationEnabled(false))
+        try{
+
+          dispatch(setLocationEnabled(false))
+        }
+        catch(e)
+        {
+          console.log("error in dispatching")
+        }
         setLocationCheckVisited(true)
 
 
@@ -472,9 +546,16 @@ const Splash = ({ navigation }) => {
             for (let i = 0; i <= addressComponent?.length; i++) {
               if (i === addressComponent?.length) {
                 console.log("location json after iteration", locationJson)
-                dispatch(setLocationCheckVisited(true))
-                dispatch(setLocationPermissionStatus(true))
-                dispatch(setLocation(locationJson))
+                try{
+                  dispatch(setLocationCheckVisited(true))
+                  dispatch(setLocationPermissionStatus(true))
+                  dispatch(setLocation(locationJson))
+
+                }
+                catch(e)
+                {
+                  console.log("error in dispatching location data")
+                }
                 setLocationCheckVisited(true)
 
                 }
@@ -514,7 +595,14 @@ const Splash = ({ navigation }) => {
             // Permission Denied
             // Geolocation.requestAuthorization()
             setLocationCheckVisited(true)
-            dispatch(setLocationPermissionStatus(false))
+            try{
+
+              dispatch(setLocationPermissionStatus(false))
+            }
+            catch(e)
+            {
+              console.log("error in dispatching location permission status")
+            }
 
           } else if (error.code === 2) {
             // Position Unavailable
@@ -548,7 +636,14 @@ const Splash = ({ navigation }) => {
     const checkToken = async () => {
       const fcmToken = await messaging().getToken();
       if (fcmToken) {
-        dispatch(setFcmToken(fcmToken))
+        try{
+
+          dispatch(setFcmToken(fcmToken))
+        }
+        catch(e)
+        {
+          console.log("error in dispatching fcm token")
+        }
       }
     }
     checkToken()
@@ -580,7 +675,14 @@ const Splash = ({ navigation }) => {
       }
     };
     requestLocationPermission()
-    dispatch({ type: 'NETWORK_REQUEST' });
+    try{
+
+      dispatch({ type: 'NETWORK_REQUEST' });
+    }
+    catch(e)
+    {
+      console.log("error in dispatching network request")
+    }
   }, [])
 
 
@@ -607,7 +709,7 @@ const Splash = ({ navigation }) => {
       }
     }
     else if (getMinVersionSupportError) {
-      console.log("getMinVersionSupportError", getMinVersionSupportError)
+      // console.log("getMinVersionSupportError", getMinVersionSupportError)
     }
   }, [getMinVersionSupportData, getMinVersionSupportError])
 
@@ -616,12 +718,19 @@ const Splash = ({ navigation }) => {
       setConnected(isConnected.isConnected)
       // setIsSlowInternet(isConnected.isInternetReachable)
       getUsers();
-      dispatch(setAppVersion(currentVersion))
+      try{
 
-        getMinVersionSupportFunc(currentVersion)
+        dispatch(setAppVersion(currentVersion))
+      }
+      catch(e)
+      {
+        console.log("error in dispatching app version")
+      }
+
+       currentVersion && getMinVersionSupportFunc(String(currentVersion))
         getAppTheme("Tibcon")
         getData()
-  },[isConnected,locationStatusChecked])
+  },[isConnected,locationStatusChecked,minVersionSupport])
   
   useEffect(() => {
     if (getUsersData) {
@@ -636,8 +745,15 @@ const Splash = ({ navigation }) => {
           "id": item.user_type_id
         }
       })
-      dispatch(setAppUsers(appUsers))
-      dispatch(setAppUsersData(appUsersData))
+      try{
+
+        dispatch(setAppUsers(appUsers))
+        dispatch(setAppUsersData(appUsersData))
+      }
+      catch(e)
+      {
+        console.log("error in dispatching app user type")
+      }
 
     } else if (getUsersError) {
       // console.log("getUsersError", getUsersError);
@@ -669,14 +785,19 @@ const Splash = ({ navigation }) => {
       // console.log("isAlreadyIntroduced",isAlreadyIntroduced)
     }
     else {
+      console.error("locationStatusChecked and min version support",locationStatusChecked, minVersionSupport)
       setShowLoading(false)
       if (value === "Yes") 
       {   
-       navigation.navigate('SelectUser') 
+       __DEV__ && setLocationCheckVisited(true)
+       setTimeout(() => {
+       minVersionSupport  && navigation.navigate('OtpLogin',{ needsApproval: manualApproval.includes(userList?.[0].user_type),userType:userList?.[0]?.user_type,userId:userList?.[0]?.user_type_id, registrationRequired:registrationRequired}) 
+        
+       }, 1000);
       }
       else 
       {
-        navigation.navigate('Introduction')  
+       minVersionSupport  && navigation.navigate('Introduction') 
       }
       // console.log("isAlreadyIntroduced",isAlreadyIntroduced,gotLoginData)
 
@@ -696,31 +817,38 @@ const Splash = ({ navigation }) => {
   useEffect(() => {
     if (getAppThemeData) {
       // console.log("getAppThemeData", JSON.stringify(getAppThemeData?.body))
-      dispatch(setPrimaryThemeColor(getAppThemeData?.body?.theme?.color_shades["600"]))
-      dispatch(setSecondaryThemeColor(getAppThemeData?.body?.theme?.color_shades["400"]))
-      dispatch(setTernaryThemeColor(getAppThemeData?.body?.theme?.color_shades["700"]))
-      dispatch(setIcon(getAppThemeData?.body?.logo[0]))
-      dispatch(setIconDrawer(getAppThemeData?.body?.logo[0]))
-      dispatch(setOptLogin(getAppThemeData?.body?.login_options?.Otp.users))
-      dispatch(setPasswordLogin(getAppThemeData?.body?.login_options?.Password.users))
-      dispatch(setButtonThemeColor(getAppThemeData?.body?.theme?.color_shades["700"]))
-      dispatch(setManualApproval(getAppThemeData?.body?.approval_flow_options?.Manual.users))
-      dispatch(setAutoApproval(getAppThemeData?.body?.approval_flow_options?.AutoApproval.users))
-      dispatch(setRegistrationRequired(getAppThemeData?.body?.registration_options?.Registration?.users))
-      dispatch(setColorShades(getAppThemeData?.body?.theme.color_shades))
-      dispatch(setKycOptions(getAppThemeData?.body?.kyc_options))
-      dispatch(setPointSharing(getAppThemeData?.body?.points_sharing))
-      dispatch(setSocials(getAppThemeData?.body?.socials))
-      dispatch(setWebsite(getAppThemeData?.body?.website))
-      dispatch(setCustomerSupportMail(getAppThemeData?.body?.customer_support_email))
-      dispatch(setCustomerSupportMobile(getAppThemeData?.body?.customer_support_mobile))
-      dispatch(setExtraFeatures(getAppThemeData?.body?.addon_features))
-      if (getAppThemeData?.body?.addon_features?.kyc_online_verification !== undefined) {
-        if (getAppThemeData?.body?.addon_features?.kyc_online_verification) {
-          dispatch(setIsOnlineVeriification())
+      try{
+        dispatch(setPrimaryThemeColor(getAppThemeData?.body?.theme?.color_shades["600"]))
+        dispatch(setSecondaryThemeColor(getAppThemeData?.body?.theme?.color_shades["400"]))
+        dispatch(setTernaryThemeColor(getAppThemeData?.body?.theme?.color_shades["700"]))
+        dispatch(setIcon(getAppThemeData?.body?.logo[0]))
+        dispatch(setIconDrawer(getAppThemeData?.body?.logo[0]))
+        dispatch(setOptLogin(getAppThemeData?.body?.login_options?.Otp.users))
+        dispatch(setPasswordLogin(getAppThemeData?.body?.login_options?.Password.users))
+        dispatch(setButtonThemeColor(getAppThemeData?.body?.theme?.color_shades["700"]))
+        dispatch(setManualApproval(getAppThemeData?.body?.approval_flow_options?.Manual.users))
+        dispatch(setAutoApproval(getAppThemeData?.body?.approval_flow_options?.AutoApproval.users))
+        dispatch(setRegistrationRequired(getAppThemeData?.body?.registration_options?.Registration?.users))
+        dispatch(setColorShades(getAppThemeData?.body?.theme.color_shades))
+        dispatch(setKycOptions(getAppThemeData?.body?.kyc_options))
+        dispatch(setPointSharing(getAppThemeData?.body?.points_sharing))
+        dispatch(setSocials(getAppThemeData?.body?.socials))
+        dispatch(setWebsite(getAppThemeData?.body?.website))
+        dispatch(setCustomerSupportMail(getAppThemeData?.body?.customer_support_email))
+        dispatch(setCustomerSupportMobile(getAppThemeData?.body?.customer_support_mobile))
+        dispatch(setExtraFeatures(getAppThemeData?.body?.addon_features))
+        if (getAppThemeData?.body?.addon_features?.kyc_online_verification !== undefined) {
+          if (getAppThemeData?.body?.addon_features?.kyc_online_verification) {
+            dispatch(setIsOnlineVeriification())
+          }
         }
+        getData()
       }
-      getData()
+      catch(e)
+      {
+        console.log("error in dispatch getappThemeData",e)
+      }
+    
     }
     else if (getAppThemeError) {
       // console.log("getAppThemeError", getAppThemeError)

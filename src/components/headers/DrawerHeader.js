@@ -19,6 +19,8 @@ const DrawerHeader = () => {
     const icon = useSelector(state => state.apptheme.icon)
         ? useSelector(state => state.apptheme.icon)
         : require('../../../assets/images/demoIcon.png');
+
+        console.log("Dashboard icon",icon)
     
     const BellComponent =()=>{
         return(

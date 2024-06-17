@@ -14,7 +14,7 @@ const EmailTextInput = (props) => {
   const placeHolder = props.placeHolder;
   const label = props.label;
   let displayText = props.placeHolder
-  const required = props.displayText
+  const required = props.jsonData?.required
   props.required === undefined ? props.jsonData.required : props.required;
 
   const {t} =useTranslation()

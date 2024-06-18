@@ -58,7 +58,7 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-target 'Tibcon' do
+target 'TIBCONRewards' do
   config = use_native_modules!
 
 
@@ -80,7 +80,7 @@ target 'Tibcon' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  target 'TibconTests' do
+  target 'TIBCONRewardsTests' do
     inherit! :complete
     # Pods for testing
   end

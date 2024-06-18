@@ -1,4 +1,4 @@
-package com.Tibcon;
+package com.Genefied.TIBCONRewards;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

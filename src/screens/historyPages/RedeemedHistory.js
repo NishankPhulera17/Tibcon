@@ -17,6 +17,7 @@ import { useGetkycStatusMutation } from '../../apiServices/kyc/KycStatusApi';
 import PoppinsTextLeftMedium from '../../components/electrons/customFonts/PoppinsTextLeftMedium';
 import InputDate from '../../components/atoms/input/InputDate';
 import { useTranslation } from 'react-i18next';
+import Close from 'react-native-vector-icons/Ionicons';
 
 const RedeemedHistory = ({ navigation }) => {
   const [message, setMessage] = useState();
@@ -276,9 +277,10 @@ const RedeemedHistory = ({ navigation }) => {
         }
         }
         else{
+          console.log("Redemption Window",Number(new Date(redemptionStartData).getTime()),Number(new Date().getTime()) , Number(new Date(redemptionEndDate).getTime()))
           setError(true)
         setMessage("Redemption window starts from "+ moment(redemptionStartData).format("DD-MMM-YYYY") + " and ends on " +  moment(redemptionEndDate).format("DD-MMM-YYYY"))
-        setNavigateTo("RedeemedHistory")
+        setNavigateTo("Dashboard")
 
         }
       }
@@ -297,9 +299,11 @@ const RedeemedHistory = ({ navigation }) => {
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
               <Image style={{ height: 80, width: 80, marginTop: 20 }} source={require('../../../assets/images/gift1.png')}></Image>
-              <PoppinsTextMedium style={{ color: 'black', width: 300, marginTop: 20 }} content="Do you want redeem your point with amazing gift or cashback"></PoppinsTextMedium>
-              <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: 20,width:'100%'}}>
-                <TouchableOpacity onPress={() => {
+              <PoppinsTextMedium style={{ color: 'black', width: 300, marginTop: 20 }} content="Redeem your point with amazing cashback"></PoppinsTextMedium>
+              <Close onPress={()=>{setModalVisible(false)}} style={{position:"absolute",top:0, right:0}} name="close" size={40} color="red" />
+
+              <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', padding: 20,width:'100%'}}>
+                {/* <TouchableOpacity onPress={() => {
                   console.log("gift")
                   setModalVisible(false)
                   navigation.navigate('RedeemGifts')
@@ -316,7 +320,7 @@ const RedeemedHistory = ({ navigation }) => {
                 }} style={{ alignItems: "center", justifyContent: "center", backgroundColor: ternaryThemeColor, flexDirection: "row", height: 40, width: 100, borderRadius: 10 }}>
                   <Image style={{ height: 20, width: 20, resizeMode: "contain" }} source={require('../../../assets/images/giftWhite.png')}></Image>
                   <PoppinsTextMedium style={{ color: 'white', marginLeft: 10 }} content="Coupons"></PoppinsTextMedium>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
                 <TouchableOpacity onPress={() => {
                   console.log("cashback")
                   setModalVisible(false)
@@ -552,19 +556,14 @@ const RedeemedHistory = ({ navigation }) => {
           //   )
 
           // }) */}
-     {error  && (
-        <ErrorModal
-          modalClose={modalClose}
-          message={message}
-          openModal={error}
-          ></ErrorModal>
-      )}
-      {error && navigateTo && (
+     
+      {error  && (
         <ErrorModal
           modalClose={modalClose}
           message={message}
           openModal={error}
           navigateTo={navigateTo}
+          navigationType= "navigate"
           ></ErrorModal>
       )}
       {success && (

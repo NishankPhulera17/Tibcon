@@ -11,6 +11,7 @@ const ErrorModal = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
   const productData = props.productData;
   const type = props.type
+  const navigationType = props?.navigationType
   const title = props.title
   const navigation = useNavigation()
   const ternaryThemeColor = useSelector(
@@ -39,6 +40,7 @@ const ErrorModal = (props) => {
   const closeModal = () => {
    
     
+    navigateTo && navigationType=="navigate" &&  navigation.navigate(navigateTo)
     navigateTo &&  navigation.replace(navigateTo)
     
     props.modalClose()

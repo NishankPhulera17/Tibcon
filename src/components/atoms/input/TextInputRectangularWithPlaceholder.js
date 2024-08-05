@@ -30,6 +30,10 @@ const TextInputRectangularWithPlaceholder = (props) => {
             setKeyboardType('numeric')
             setMaxlength(10)
         }
+        if (placeHolder.toLowerCase() === "whatsapp no" ) {
+            setKeyboardType('numeric')
+            setMaxlength(10)
+        }
         if(title?.split("_").includes("mobile"))
         {
             setKeyboardType('numeric')

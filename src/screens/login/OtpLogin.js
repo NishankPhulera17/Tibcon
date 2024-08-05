@@ -92,7 +92,7 @@ const OtpLogin = ({ navigation, route }) => {
   const user_type_id = route.params.userId;
   const user_type = route.params.userType;
   const registrationRequired = route.params.registrationRequired
-  // console.log("registrationRequired", registrationRequired, user_type)
+  console.log("registrationRequired", registrationRequired, user_type)
   const width = Dimensions.get('window').width;
   const navigationParams = { "needsApproval": needsApproval, "user_type_id": user_type_id, "user_type": user_type, "mobile": mobile, "name": name }
 
@@ -298,7 +298,7 @@ const OtpLogin = ({ navigation, route }) => {
             source={require('../../../assets/images/Logo.png')}></Image>
             {/* <PoppinsTextMedium style={{fontSize:14,color:'white'}} content ="Don't have an account ?"></PoppinsTextMedium> */}
             <View style={{position:"absolute",right:20,top:10}}>
-              {registrationRequired &&
+              
                  <ButtonNavigate
                  handleOperation={()=>{navigation.navigate("BasicInfo",{needsApproval: needsApproval, userType: user_type, userId: user_type_id, name: name, mobile: mobile, navigatingFrom: "OtpLogin" })}}
                  backgroundColor="#353535"
@@ -308,7 +308,7 @@ const OtpLogin = ({ navigation, route }) => {
                  properties = {{needsApproval: needsApproval, userType: user_type, userId: user_type_id, name: name, mobile: mobile, navigatingFrom: "OtpLogin" }}
                >
                </ButtonNavigate>
-              }
+              
          
             </View>
             

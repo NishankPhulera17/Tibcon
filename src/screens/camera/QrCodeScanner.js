@@ -535,8 +535,11 @@ const QrCodeScanner = ({ navigation,route }) => {
 
       if(e?.data?.includes("=")){
          qrData = e?.data?.split("=")[1];
-      }else{
+      }else if(e?.data?.includes("?")){
         qrData = e?.data?.split("?")[1];
+      }
+      else{
+        qrData = e?.data
       }
       // console.log("qrData", qrData);
 

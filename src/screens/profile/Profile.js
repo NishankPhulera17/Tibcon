@@ -391,7 +391,7 @@ const Profile = ({ navigation }) => {
                 navigation.navigate('EditProfile', {
                   formFields: formFields,
                   formValues: formValues,
-                  savedImage: fetchProfileData.body?.profile_pic
+                  savedImage: fetchProfileData?.body?.profile_pic
                 });
               }}
               style={{ height: 40, width: 40, borderRadius: 20, backgroundColor: "white", borderWidth: 1, borderColor: ternaryThemeColor, alignItems: "center", justifyContent: 'center' }}>

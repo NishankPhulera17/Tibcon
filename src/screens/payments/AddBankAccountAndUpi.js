@@ -54,7 +54,11 @@ const AddBankAccountAndUpi = ({navigation}) => {
             <View style={{alignItems:'flex-start',justifyContent:'center',width:'70%',height:'100%',marginLeft:20}}>
                 <PoppinsTextMedium style={{color:'black',fontSize:14}} content="Unified Payments Interface (UPI)"></PoppinsTextMedium>
                 <PoppinsTextMedium style={{color:'black',fontSize:10}} content="Transfer through UPI ID"></PoppinsTextMedium>
-
+                <View style={{height:30,width:'100%',flexDirection:'row',alignItems:'center'}}>
+                    <Image style={{height:30,width:30,resizeMode:'contain'}} source={require('../../../assets/images/googlePay.png')}></Image>
+                    <Image style={{height:60,width:60,resizeMode:'contain'}} source={require('../../../assets/images/phonepe.png')}></Image>
+                
+                </View>
             </View>
             <View style={{alignItems:'center',justifyContent:'center'}}>
                 <Image style={{height:20,width:20,resizeMode:"contain"}} source={require('../../../assets/images/next.png')}></Image>

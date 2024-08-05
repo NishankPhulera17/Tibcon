@@ -100,7 +100,7 @@ const BasicInfo = ({ navigation, route }) => {
   const needsApproval = route.params.needsApproval
   const navigatingFrom = route.params.navigatingFrom
   const registrationRequired = route.params.registrationRequired
-  // console.log("registration required basic info", registrationRequired)
+  console.log("registration required basic info", registrationRequired)
   // const navigationParams = { "needsApproval": needsApproval, "userId": userTypeId, "user_type": userType, "mobile": mobile, "name": name, "registrationRequired":registrationRequired}
   const navigationParams = { "needsApproval": needsApproval, "userId": userTypeId, "userType": userType, "registrationRequired":registrationRequired}
 // console.log("navigation params from basic info",navigationParams)
@@ -1020,6 +1020,24 @@ const handleRegistrationFormSubmission = () => {
                     </TextInputAadhar>
                   );
                 }
+                else if(item.name === "whatsapp_number")
+                {
+                  return (
+                          <TextInputNumericRectangle  
+                            jsonData={item}
+                            key={index}
+                            maxLength={10}
+                            handleData={handleChildComponentData}
+                            placeHolder={item.name}
+                            displayText ={item.name}
+                            label={item.label}
+                            // isEditable={false}
+                          >
+                            {' '}
+                          </TextInputNumericRectangle>
+                  )
+                  }
+                
                 else if (item.name === 'pan') {
                   console.log("pan")
                   return (

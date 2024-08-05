@@ -531,7 +531,13 @@ const QrCodeScanner = ({ navigation,route }) => {
       setError(true);
       setMessage("Please scan a valid QR");
     } else {
-      const qrData = e?.data?.split("=")[1];
+      let qrData;
+
+      if(e?.data?.includes("=")){
+         qrData = e?.data?.split("=")[1];
+      }else{
+        qrData = e?.data?.split("?")[1];
+      }
       // console.log("qrData", qrData);
 
       let requestData = { unique_code: qrData };

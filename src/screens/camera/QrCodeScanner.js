@@ -552,6 +552,7 @@ const QrCodeScanner = ({ navigation,route }) => {
         requestData = { unique_code: qrData };
       }
 
+      console.log("requestData", requestData)
       const verifyQR = async (data) => {
         console.log("qrDataVerifyQR", data);
         if (data?.unique_code != undefined) {
@@ -566,7 +567,7 @@ const QrCodeScanner = ({ navigation,route }) => {
               const token = credentials?.username;
 
               const response = await verifyQrFunc({ token, data });
-              console.log("verifyQrFunc",response)
+              console.log("verifyQrFunc",JSON.stringify(response))
               if (response?.data) {
                 console.log("Verify qr data", JSON.stringify(response));
                 if (response?.data?.body == null) {

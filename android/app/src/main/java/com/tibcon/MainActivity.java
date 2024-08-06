@@ -1,4 +1,4 @@
-package com.Tibcon;
+package com.tibcon;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

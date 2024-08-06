@@ -1,4 +1,4 @@
-package com.Tibcon;
+package com.tibcon;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

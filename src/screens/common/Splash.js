@@ -694,7 +694,7 @@ const Splash = ({ navigation }) => {
         if (!getMinVersionSupportData?.body?.data) {
           Alert.alert('Kindly update the app to the latest version', 'Your version of app is not supported anymore, kindly update', [
             
-            {text: 'Update', onPress: () => Linking.openURL("https://play.google.com/store/apps/details?id=com.Tibcon")},
+            {text: 'Update', onPress: () => Linking.openURL("https://play.google.com/store/apps/details?id=com.tibcon")},
           ]);
         }
       }
@@ -703,7 +703,7 @@ const Splash = ({ navigation }) => {
         {
           Alert.alert('Kindly update the app to the latest version', 'Your version of app is not supported anymore, kindly update', [
             
-            {text: 'Update', onPress: () => Linking.openURL("https://play.google.com/store/apps/details?id=com.Tibcon")},
+            {text: 'Update', onPress: () => Linking.openURL("https://play.google.com/store/apps/details?id=com.tibcon")},
           ]);
         }
       }

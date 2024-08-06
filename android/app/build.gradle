@@ -75,12 +75,12 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.Tibcon"
+    namespace "com.tibcon"
     defaultConfig {
-        applicationId "com.Tibcon"
+        applicationId "com.tibcon"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 2
+        versionCode 6
         versionName "1.0.1"
         missingDimensionStrategy 'react-native-camera', 'general'
         

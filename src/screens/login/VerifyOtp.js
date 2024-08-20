@@ -610,10 +610,10 @@ const VerifyOtp = ({ navigation, route }) => {
           }}>
           <PoppinsText
             style={{ color: 'black', fontSize: 28 }}
-            content={t("Enter the OTP sent to")}></PoppinsText>
-          <PoppinsText
+            content={t("Please Enter OTP")}></PoppinsText>
+          {/* <PoppinsText
             style={{ color: 'black', fontSize: 28 }}
-            content={navigationParams.mobile}></PoppinsText>
+            content={navigationParams.mobile}></PoppinsText> */}
 
         </View>
 

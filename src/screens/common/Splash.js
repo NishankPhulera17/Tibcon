@@ -694,7 +694,7 @@ const Splash = ({ navigation }) => {
         if (!getMinVersionSupportData?.body?.data) {
           Alert.alert('Kindly update the app to the latest version', 'Your version of app is not supported anymore, kindly update', [
             
-            {text: 'Update', onPress: () => Linking.openURL("https://play.google.com/store/apps/details?id=com.tibcon")},
+            {text: 'Update', onPress: () => Platform.OS == "android" ? Linking.openURL("https://play.google.com/store/apps/details?id=com.Tibcon") :  Linking.openURL("https://apps.apple.com/in/app/tibcon-rewards/id6504183577 ")   },
           ]);
         }
       }
@@ -703,7 +703,8 @@ const Splash = ({ navigation }) => {
         {
           Alert.alert('Kindly update the app to the latest version', 'Your version of app is not supported anymore, kindly update', [
             
-            {text: 'Update', onPress: () => Linking.openURL("https://play.google.com/store/apps/details?id=com.tibcon")},
+            {text: 'Update', onPress: () => Platform.OS == "android" ? Linking.openURL("https://play.google.com/store/apps/details?id=com.Tibcon") :  Linking.openURL("https://apps.apple.com/in/app/tibcon-rewards/id6504183577 ")   },
+
           ]);
         }
       }
@@ -791,13 +792,13 @@ const Splash = ({ navigation }) => {
       {   
        __DEV__ && setLocationCheckVisited(true)
        setTimeout(() => {
-       minVersionSupport  && navigation.navigate('OtpLogin',{ needsApproval: manualApproval.includes(userList?.[0].user_type),userType:userList?.[0]?.user_type,userId:userList?.[0]?.user_type_id, registrationRequired:registrationRequired}) 
+       (__DEV__ || minVersionSupport ) && navigation.navigate('OtpLogin',{ needsApproval: manualApproval.includes(userList?.[0].user_type),userType:userList?.[0]?.user_type,userId:userList?.[0]?.user_type_id, registrationRequired:registrationRequired}) 
         
        }, 1000);
       }
       else 
       {
-       minVersionSupport  && navigation.navigate('Introduction') 
+        (__DEV__ || minVersionSupport )  && navigation.navigate('Introduction') 
       }
       // console.log("isAlreadyIntroduced",isAlreadyIntroduced,gotLoginData)
 

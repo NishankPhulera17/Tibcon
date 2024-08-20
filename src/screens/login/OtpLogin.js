@@ -297,20 +297,7 @@ const OtpLogin = ({ navigation, route }) => {
             }}
             source={require('../../../assets/images/Logo.png')}></Image>
             {/* <PoppinsTextMedium style={{fontSize:14,color:'white'}} content ="Don't have an account ?"></PoppinsTextMedium> */}
-            <View style={{position:"absolute",right:20,top:10}}>
-              
-                 <ButtonNavigate
-                 handleOperation={()=>{navigation.navigate("BasicInfo",{needsApproval: needsApproval, userType: user_type, userId: user_type_id, name: name, mobile: mobile, navigatingFrom: "OtpLogin" })}}
-                 backgroundColor="#353535"
-                 style={{ color: 'white', fontSize: 16 }}
-                 content="Register"
-                 navigateTo="BasicInfo"
-                 properties = {{needsApproval: needsApproval, userType: user_type, userId: user_type_id, name: name, mobile: mobile, navigatingFrom: "OtpLogin" }}
-               >
-               </ButtonNavigate>
-              
-         
-            </View>
+       
             
         </View>
         <View
@@ -360,7 +347,20 @@ const OtpLogin = ({ navigation, route }) => {
           </View>
           
         </KeyboardAvoidingView>
-
+        <View style={{position:"absolute",bottom:'30%', left:'25%',width:'50%',}}>
+              
+              <ButtonNavigate
+              handleOperation={()=>{navigation.navigate("BasicInfo",{needsApproval: needsApproval, userType: user_type, userId: user_type_id, name: name, mobile: mobile, navigatingFrom: "OtpLogin" })}}
+              backgroundColor="#353535"
+              style={{ color: 'white', fontSize: 16 }}
+              content="New Registration"
+              navigateTo="BasicInfo"
+              properties = {{needsApproval: needsApproval, userType: user_type, userId: user_type_id, name: name, mobile: mobile, navigatingFrom: "OtpLogin" }}
+            >
+            </ButtonNavigate>
+           
+      
+         </View>
         
 
         <View

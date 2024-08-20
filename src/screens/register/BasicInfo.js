@@ -8,6 +8,7 @@ import {
   TextInput,
   ScrollView,
   Dimensions,
+  KeyboardAvoidingView,
   Text
 } from 'react-native';
 import PoppinsTextMedium from '../../components/electrons/customFonts/PoppinsTextMedium';
@@ -46,6 +47,7 @@ import { useIsFocused } from '@react-navigation/native';
 import FastImage from 'react-native-fast-image';
 import {GoogleMapsKey} from "@env"
 import { useTranslation } from 'react-i18next';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 
 const BasicInfo = ({ navigation, route }) => {
@@ -866,9 +868,21 @@ const handleRegistrationFormSubmission = () => {
             }}></PoppinsTextMedium>
         </View>
       </View>
-      <ScrollView style={{ width: '100%' }}>
 
-        <View style={{ width: width, backgroundColor: "white", alignItems: "center", justifyContent: 'flex-start', paddingTop: 20 }}>
+
+<KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={{ height:'90%'}}
+    >
+      <ScrollView style={{ width: '100%', height:'90%' }}>
+      <KeyboardAwareScrollView
+      contentContainerStyle={{ flexGrow: 1 }}
+      extraScrollHeight={Platform.OS === 'ios' ? 20 : 50} // Adjust this value as needed
+      enableOnAndroid={true}
+      keyboardOpeningTime={0}
+    >
+
+        <KeyboardAvoidingView   behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={{ width: width, backgroundColor: "white", alignItems: "center", justifyContent: 'flex-start', paddingTop: 20 }}>
           {formFound ? <PoppinsTextMedium style={{ color: 'black', fontWeight: '700', fontSize: 18, marginBottom: 40 }} content={t("Please Fill The Following Form To Register")}></PoppinsTextMedium> : <PoppinsTextMedium style={{ color: 'black', fontWeight: '700', fontSize: 18, marginBottom: 40 }} content="No Form Available !!"></PoppinsTextMedium>}
 
           {/* <RegistrationProgress data={["Basic Info","Business Info","Manage Address","Other Info"]}></RegistrationProgress> */}
@@ -880,7 +894,7 @@ const handleRegistrationFormSubmission = () => {
                   return (
                     <>
 
-                      <View style={{ flexDirection: 'row', flex: 1 }}>
+                      <KeyboardAvoidingView style={{ flexDirection: 'row', flex: 1 }}>
 
                         <View style={{ flex: 0.75 }}>
                           {navigatingFrom === "OtpLogin" && <TextInputNumericRectangle
@@ -929,13 +943,13 @@ const handleRegistrationFormSubmission = () => {
                 }}
                 resizeMode={FastImage.resizeMode.contain}
               />}
-                      </View>
+                      </KeyboardAvoidingView>
 
 
 
                       {/* {console.log("conditions", otpVerified, otpVisible)} */}
                       {!otpVerified && otpVisible &&
-                        <>
+                        <KeyboardAvoidingView>
 
                           <PoppinsTextLeftMedium style={{ marginRight: '70%' }} content="OTP"></PoppinsTextLeftMedium>
 
@@ -962,7 +976,7 @@ const handleRegistrationFormSubmission = () => {
 
                             </View>
                           </View>
-                        </>
+                          </KeyboardAvoidingView>
                       }
                     </>
                   );
@@ -1210,8 +1224,12 @@ const handleRegistrationFormSubmission = () => {
               color: 'white',
               fontSize: 16,
             }}></ButtonOval>}
-        </View>
+        </KeyboardAvoidingView>
+        </KeyboardAwareScrollView>
       </ScrollView>
+      </KeyboardAvoidingView>
+
+
 
     </View>
   );

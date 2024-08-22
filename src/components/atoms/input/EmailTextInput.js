@@ -137,7 +137,7 @@ const handlekeyboardHide=(text)=>{
         >
           <PoppinsTextMedium
             style={{ color: "#919191", padding: 4, fontSize: 18 }}
-            content={t(displayText)}
+            content={t(label)}
           ></PoppinsTextMedium>
         </View>
         <TextInput
@@ -163,7 +163,7 @@ const handlekeyboardHide=(text)=>{
             handleInput(text);
           }}
           value={value}
-          placeholder={required ? `${placeHolder} *` : `${placeHolder}`}
+          placeholder={required ? `${label} *` : `${label}`}
         ></TextInput>
       </View>
       {isValidEmailState===false && (

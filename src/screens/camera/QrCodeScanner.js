@@ -186,6 +186,9 @@ const QrCodeScanner = ({ navigation,route }) => {
     },
   ] = useAddBulkQrMutation();
 
+
+  
+
   useEffect(() => {
     if (addBulkQrData) {
       // console.log("addBulkQrData",addBulkQrData)

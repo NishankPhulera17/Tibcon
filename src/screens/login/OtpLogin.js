@@ -277,7 +277,7 @@ const OtpLogin = ({ navigation, route }) => {
 
           }}>
 
-          <TouchableOpacity
+          {/* <TouchableOpacity
             style={{ height: 50, alignItems: "center", justifyContent: 'center', position: "absolute", left: 10, top: 20 }}
             onPress={() => {
               navigation.goBack();
@@ -285,7 +285,7 @@ const OtpLogin = ({ navigation, route }) => {
             <Image
               style={{ height: 30, width: 25, resizeMode: 'contain' }}
               source={require('../../../assets/images/blackBack.png')}></Image>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           <Image
             style={{
               height: 100,
@@ -347,20 +347,7 @@ const OtpLogin = ({ navigation, route }) => {
           </View>
           
         </KeyboardAvoidingView>
-        <View style={{position:"absolute",bottom:'30%', left:'25%',width:'50%',}}>
-              
-              <ButtonNavigate
-              handleOperation={()=>{navigation.navigate("BasicInfo",{needsApproval: needsApproval, userType: user_type, userId: user_type_id, name: name, mobile: mobile, navigatingFrom: "OtpLogin" })}}
-              backgroundColor="#353535"
-              style={{ color: 'white', fontSize: 16 }}
-              content="New Registration"
-              navigateTo="BasicInfo"
-              properties = {{needsApproval: needsApproval, userType: user_type, userId: user_type_id, name: name, mobile: mobile, navigatingFrom: "OtpLogin" }}
-            >
-            </ButtonNavigate>
-           
-      
-         </View>
+       
         
 
         <View
@@ -393,7 +380,20 @@ const OtpLogin = ({ navigation, route }) => {
           ></ButtonNavigateArrow>}
   
           
-
+  <View style={{alignItems:"center",justifyContent:'center',marginTop:40}}>
+              
+              <ButtonNavigate
+              handleOperation={()=>{navigation.navigate("BasicInfo",{needsApproval: needsApproval, userType: user_type, userId: user_type_id, name: name, mobile: mobile, navigatingFrom: "OtpLogin" })}}
+              backgroundColor="#353535"
+              style={{ color: 'white', fontSize: 16, }}
+              content="New Registration"
+              navigateTo="BasicInfo"
+              properties = {{needsApproval: needsApproval, userType: user_type, userId: user_type_id, name: name, mobile: mobile, navigatingFrom: "OtpLogin" }}
+            >
+            </ButtonNavigate>
+           
+      
+         </View>
 
         </View>
         {error && <ErrorModal modalClose={modalClose} title="" message={message} openModal={error}></ErrorModal>}

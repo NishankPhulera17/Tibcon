@@ -63,7 +63,7 @@ const TextInputNumericRectangle = props => {
         }}>
         <PoppinsTextMedium
           style={{color: '#919191', padding: 4,fontSize:18}}
-          content={displayText}></PoppinsTextMedium>
+          content={label}></PoppinsTextMedium>
       </View>
       <TextInput
         maxLength={maxLength}
@@ -86,7 +86,7 @@ const TextInputNumericRectangle = props => {
           handleInput(text);
         }}
         value={value}
-        placeholder={required ? `${displayText} *` : `${displayText}`}></TextInput>
+        placeholder={required ? `${label} *` : `${label}`}></TextInput>
     </View>
   );
 };

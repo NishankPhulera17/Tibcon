@@ -74,7 +74,7 @@ const TextInputRectangle = (props) => {
           handleInput(text);
         }}
         value={value}
-        placeholder={required ? `${placeHolder} *` : `${placeHolder} `}
+        placeholder={required ? `${label} *` : `${label} `}
       ></TextInput>
     </View>
   );

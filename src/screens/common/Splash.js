@@ -735,7 +735,7 @@ const Splash = ({ navigation }) => {
   
   useEffect(() => {
     if (getUsersData) {
-      // console.log("getUsersData", getUsersData?.body);
+      console.log("getUsersData", getUsersData?.body);
       setUserList(getUsersData?.body)
       const appUsers = getUsersData?.body.map((item, index) => {
         return item.name

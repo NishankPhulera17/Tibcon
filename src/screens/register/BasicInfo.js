@@ -876,7 +876,7 @@ const handleRegistrationFormSubmission = () => {
     >
       <ScrollView style={{ width: '100%', height:'90%' }}>
       <KeyboardAwareScrollView
-      contentContainerStyle={{ flexGrow: 1 }}
+      contentContainerStyle={{ flex: 1 }}
       extraScrollHeight={Platform.OS === 'ios' ? 20 : 50} // Adjust this value as needed
       enableOnAndroid={true}
       keyboardOpeningTime={0}

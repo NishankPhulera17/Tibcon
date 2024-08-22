@@ -728,14 +728,14 @@
 				ENABLE_BITCODE = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = Tibcon/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Tibcon;
+				INFOPLIST_KEY_CFBundleDisplayName = "TIBCON Reward";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.7;
+				MARKETING_VERSION = 6.0.8;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -766,14 +766,14 @@
 				DEVELOPMENT_TEAM = 9D932R2PWR;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = Tibcon/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Tibcon;
+				INFOPLIST_KEY_CFBundleDisplayName = "TIBCON Reward";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 6.0.7;
+				MARKETING_VERSION = 6.0.8;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

@@ -4,6 +4,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
+  Text,
   ScrollView,
 } from 'react-native';
 import { useSelector } from 'react-redux';
@@ -27,6 +28,7 @@ import { useTranslation } from 'react-i18next';
 
 
 
+
 const Profile = ({ navigation }) => {
   const [formFields, setFormFields] = useState();
   const [formValues, setFormValues] = useState();
@@ -37,6 +39,8 @@ const Profile = ({ navigation }) => {
   const [openModalWithBorder, setModalBorder] = useState(false)
   const [profileData, setProfileData] = useState()
   const [showDeleteModal, setShowDeleteModal] = useState(false)
+  const [profilePercentage, setProfilePercentafe] = useState(false)
+
 
 
   const kycData = useSelector(state => state.kycDataSlice.kycData)
@@ -93,7 +97,7 @@ const Profile = ({ navigation }) => {
     }
   }, [getActiveMembershipData, getActiveMembershipError])
 
-  useEffect(() => {
+  useEffect(() => { 
     if (getFormData) {
       if (getFormData.body.length !== 0) {
         console.log('Form Fields', JSON.stringify(getFormData));
@@ -127,7 +131,7 @@ const Profile = ({ navigation }) => {
     } else if (fetchProfileError) {
       console.log('fetchProfileError', fetchProfileError);
     }
-  }, [getFormData, getFormError, focused,fetchProfileData, fetchProfileError,profileData]);
+  }, [getFormData, getFormError, focused,fetchProfileData, fetchProfileError,profileData,]);
 
 
  
@@ -147,10 +151,24 @@ const Profile = ({ navigation }) => {
     };
     fetchData();
     getMembership()
-  }, [focused]);
+  }, [focused, showProfileData]);
 
   useEffect(() => {
-    
+    const fetchData = async () => {
+      const credentials = await Keychain.getGenericPassword();
+      if (credentials) {
+        console.log(
+          'Credentials successfully loaded for user ' + credentials.username,
+        );
+        const token = credentials.username;
+        const form_type = '6';
+        fetchProfileFunc(token);
+
+        getFormFunc({ form_type, token });
+      }
+    };
+    fetchData();
+    getMembership()
   }, []);
 
   const getMembership = async () => {
@@ -191,8 +209,19 @@ const Profile = ({ navigation }) => {
         arrayNames.map(item => {
           temparr.push(profileData.body[item]);
         });
-        // console.log("Form Values",temparr)
+        console.log("Form Values",temparr)
         setFormValues(temparr);
+
+        const totalLength = temparr.length;
+        const nullLength = temparr.filter((item)=>{
+          return item === null || item === undefined || item === ''
+        }).length;
+        const dataPercentage = nullLength / totalLength * 100
+
+        console.log("Null length",nullLength, totalLength, dataPercentage)
+
+        setProfilePercentafe(dataPercentage+"")
+        
         console.log(temparr);
       }
     }
@@ -412,6 +441,7 @@ const Profile = ({ navigation }) => {
     );
   };
 
+
   
   const ModalContent = () => {
     return (
@@ -467,6 +497,16 @@ const Profile = ({ navigation }) => {
       {fetchProfileData && <GreyBar></GreyBar>}
       {showDeleteModal && <DeleteModal hideModal = {hideModal} modalVisible={showDeleteModal}></DeleteModal>}
       <ScrollView>
+        
+        {profilePercentage &&
+          <View style={{padding:10}}>
+          <Text style={{color:'black', textAlign:'center'}}>Your Profile Is {100 - profilePercentage}% Completed</Text>
+          <View style={styles.progressBar}>
+            <View style={[styles.progressFill, { width: `${100-profilePercentage}%`,backgroundColor:profilePercentage == 0 ? 'green' : ternaryThemeColor }]} />
+          </View>
+        </View>
+        }
+    
 
         {showProfileData && <>
           <View
@@ -474,7 +514,6 @@ const Profile = ({ navigation }) => {
               borderTopRightRadius: 30,
               borderTopLeftRadius: 30,
               backgroundColor: 'white',
-
               marginTop: 10,
               alignItems: 'center',
               justifyContent: 'center',
@@ -567,6 +606,18 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
     flex: 1,
+  },
+  progressBar: {
+    height: 10,
+    backgroundColor: '#e0e0e0', // Light gray background for the progress bar
+    borderRadius: 5,
+    overflow: 'hidden',
+    marginTop: 10,
+  },
+  progressFill: {
+    height: '100%',
+    // backgroundColor: , // Black color for the filled part
+    borderRadius: 5,
   },
 });
 

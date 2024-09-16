@@ -15,7 +15,12 @@ const TextInputPan = (props) => {
   const [panVerified, setPanVerified] = useState(false)
   const placeHolder = props.placeHolder
   const required = props.required
-  let displayText = props.placeHolder
+  let from = props.from ? props.from : ""
+  let displayText = props.displayText
+  let isEditable = props.isEditable
+
+  console.log("ised", isEditable)
+
 
   const label = props.label
   const [verifyPanFunc, {
@@ -99,7 +104,13 @@ useEffect(()=>{
   const handleInputEnd = () => {
     let tempJsonData = { ...props.jsonData, "value": value }
     console.log(tempJsonData)
+    if(from == "profile"){
+      props.handleData(value, placeHolder)
+    
+    }
+    else{
     props.handleData(tempJsonData)
+    }
   }
 
   return (
@@ -136,7 +147,7 @@ useEffect(()=>{
         <PoppinsTextMedium style={{ color: "#919191", padding: 4, fontSize: 18 }} content={t(label)}></PoppinsTextMedium>
       </View>
       <View style={{ width: '80%', alignItems: 'center', justifyContent: 'center', position: 'absolute', left: 10 }}></View>
-      <TextInput maxLength={12} onSubmitEditing={(text) => { handleInputEnd() }} onEndEditing={(text) => { handleInputEnd() }} style={{ height: 50, width: '100%', alignItems: "center", justifyContent: "flex-start", fontWeight: '500', marginLeft: 24, color: 'black', fontSize: 16 }} placeholderTextColor="grey" onChangeText={(text) => { handleInput(text) }} value={value} placeholder={required ? `${label} *` : `${label}`}></TextInput>
+      <TextInput editable={isEditable == false ? isEditable : true} maxLength={12} onSubmitEditing={(text) => { handleInputEnd() }} onEndEditing={(text) => { handleInputEnd() }} style={{ height: 50, width: '100%', alignItems: "center", justifyContent: "flex-start", fontWeight: '500', marginLeft: 24, color: 'black', fontSize: 16 }} placeholderTextColor="grey" onChangeText={(text) => { handleInput(text) }} value={value ? value : displayText} placeholder={required ? `${label} *` : `${label}`}></TextInput>
       {success && <View style={{ alignItems: 'center', justifyContent: 'center', width: '20%', position: 'absolute', right: 0 }}>
         <Image style={{ height: 30, width: 30, resizeMode: 'contain' }} source={require('../../../../assets/images/greenTick.png')}></Image>
       </View>}

@@ -20,7 +20,8 @@ const DisplayOnlyTextInput = (props) => {
                 
                 <PoppinsTextMedium style={{fontSize:16,fontWeight:'600',color:'grey',marginLeft:10}} content={title}></PoppinsTextMedium>
             </View>
-            <PoppinsTextMedium style={{marginRight:10,fontSize:16,color:'#171717',marginLeft:14,marginTop:10}} content={(data)}></PoppinsTextMedium>
+
+            <PoppinsTextMedium style={{marginRight:10,fontSize:16,color: data && data == "No data available"? "red" : '#171717',marginLeft:14,marginTop:10}} content={(data)}></PoppinsTextMedium>
         </View>
     );
 }

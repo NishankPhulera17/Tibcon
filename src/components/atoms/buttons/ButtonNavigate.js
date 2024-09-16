@@ -20,6 +20,8 @@ const ButtonNavigate = props => {
   // prop to navigate to another page
   const content = props.content;
   const properties  = props.properties
+  const width  = props.width ? props.width : null
+
   // prop to display text inside the button
   
   const handleButtonPress = () => {
@@ -49,8 +51,8 @@ const ButtonNavigate = props => {
       onPress={() => {
        handleButtonPress()
       }}
-      style={{
-        padding: 10,
+      style={[{
+        padding: 14,
         borderRadius: 4,
         alignItems: 'center',
         justifyContent: 'center',
@@ -58,7 +60,8 @@ const ButtonNavigate = props => {
         margin: 10,
         paddingLeft: 20,
         paddingRight: 20,
-      }}>
+        width:width
+      }]}>
       <PoppinsText style={style} content={content}></PoppinsText>
     </TouchableOpacity>
   );

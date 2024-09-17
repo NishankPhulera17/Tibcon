@@ -54,13 +54,15 @@ const ButtonNavigate = props => {
       style={[{
         padding: 14,
         borderRadius: 4,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: backgroundColor,
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor:backgroundColor ,
         margin: 10,
         paddingLeft: 20,
         paddingRight: 20,
-        width:width
+        flexDirection: "row",
+        width: "60%",
+        height:50,
       }]}>
       <PoppinsText style={style} content={content}></PoppinsText>
     </TouchableOpacity>

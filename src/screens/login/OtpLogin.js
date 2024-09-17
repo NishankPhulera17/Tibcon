@@ -240,26 +240,27 @@ const OtpLogin = ({ navigation, route }) => {
     setError(false);
   };
   return (
-    <LinearGradient colors={["white", "white"]} style={styles.container}>
-      <View
-        style={{
-          width: "100%",
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "white",
-        }}
-      >
+    <ScrollView contentContainerStyle={{ flex: 1 }} style={{ width: "100%" }}>
+      <LinearGradient colors={["white", "white"]} style={styles.container}>
         <View
           style={{
-            height: 120,
             width: "100%",
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "ternaryThemeColor",
-            flexDirection: "row",
+            backgroundColor: "white",
           }}
         >
-          {/* <TouchableOpacity
+          <View
+            style={{
+              height: 120,
+              width: "100%",
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: "ternaryThemeColor",
+              flexDirection: "row",
+            }}
+          >
+            {/* <TouchableOpacity
             style={{ height: 50, alignItems: "center", justifyContent: 'center', position: "absolute", left: 10, top: 20 }}
             onPress={() => {
               navigation.goBack();
@@ -268,70 +269,65 @@ const OtpLogin = ({ navigation, route }) => {
               style={{ height: 30, width: 25, resizeMode: 'contain' }}
               source={require('../../../assets/images/blackBack.png')}></Image>
           </TouchableOpacity> */}
-          <Image
-            style={{
-              height: 100,
-              width: 150,
-              resizeMode: "contain",
-              top: 0,
-              position: "absolute",
-              left: 20,
-            }}
-            source={require("../../../assets/images/Logo.png")}
-          ></Image>
-          {/* <PoppinsTextMedium style={{fontSize:14,color:'white'}} content ="Don't have an account ?"></PoppinsTextMedium> */}
-        </View>
-        <View
-          style={{
-            alignItems: "flex-start",
-            justifyContent: "center",
-            marginTop: 10,
-            width: "90%",
-          }}
-        >
-          <PoppinsText
-            style={{ color: "black", fontSize: 28 }}
-            content="Tell us your mobile number"
-          ></PoppinsText>
-        </View>
-      </View>
-
-      <ScrollView contentContainerStyle={{ flex: 1 }} style={{ width: "100%" }}>
-        <KeyboardAvoidingView>
+            <Image
+              style={{
+                height: 100,
+                width: 150,
+                resizeMode: "contain",
+                top: 0,
+                position: "absolute",
+                left: 20,
+              }}
+              source={require("../../../assets/images/Logo.png")}
+            ></Image>
+            {/* <PoppinsTextMedium style={{fontSize:14,color:'white'}} content ="Don't have an account ?"></PoppinsTextMedium> */}
+          </View>
           <View
             style={{
-              width: "100%",
-              alignItems: "center",
+              alignItems: "flex-start",
               justifyContent: "center",
-              marginTop: 40,
+              marginTop: 10,
+              width: "90%",
             }}
           >
-            <TextInputRectangularWithPlaceholder
-              placeHolder="Mobile No"
-              handleData={getMobile}
-              maxLength={10}
-              KeyboardType="numeric"
-              specialCharValidation={true}
-              validationType="numeric"
-            ></TextInputRectangularWithPlaceholder>
-
-            <TextInputRectangularWithPlaceholder
-              placeHolder="Name"
-              handleData={getName}
-              value={name}
-              specialCharValidation={true}
-            ></TextInputRectangularWithPlaceholder>
+            <PoppinsText
+              style={{ color: "black", fontSize: 24 }}
+              content="Tell us your mobile number"
+            ></PoppinsText>
           </View>
-        </KeyboardAvoidingView>
+        </View>
 
-        <View
-          style={{
-            width: "100%",
-            // marginTop: 20,
-            marginBottom: 30,
-            marginLeft: 10,
-          }}
+        <ScrollView
+          contentContainerStyle={{ flex: 1 }}
+          style={{ width: "100%" }}
         >
+          <KeyboardAvoidingView>
+            <View
+              style={{
+                width: "100%",
+                alignItems: "center",
+                justifyContent: "center",
+                marginTop: 40,
+              }}
+            >
+              <TextInputRectangularWithPlaceholder
+                placeHolder="Mobile No"
+                handleData={getMobile}
+                maxLength={10}
+                KeyboardType="numeric"
+                specialCharValidation={true}
+                validationType="numeric"
+              ></TextInputRectangularWithPlaceholder>
+
+              <TextInputRectangularWithPlaceholder
+                placeHolder="Name"
+                handleData={getName}
+                value={name}
+                specialCharValidation={true}
+              ></TextInputRectangularWithPlaceholder>
+            </View>
+          </KeyboardAvoidingView>
+
           <View style={{ flexDirection: "row", marginHorizontal: 24 }}>
             <Checkbox CheckBoxData={getCheckBoxData} />
             <TouchableOpacity
@@ -355,68 +351,86 @@ const OtpLogin = ({ navigation, route }) => {
             </TouchableOpacity>
           </View>
 
-          <View style={{ width: 400, alignSelf: "center", marginLeft: "25%" ,marginTop:'5%'}}>
-            {
-              <ButtonNavigateArrow
-                success={success}
-                handleOperation={handleButtonPress}
-                backgroundColor={buttonThemeColor}
-                style={{ color: "white", fontSize: 16 }}
-                content="Login"
-                navigateTo="VerifyOtp"
-                navigationParams={navigationParams}
-                mobileLength={mobile}
-                isChecked={isChecked && mobile?.length == 10 && name != ""}
-              ></ButtonNavigateArrow>
-            }
-          </View>
-
           <View
             style={{
+              width: "100%",
+              // marginTop: 20,
+              marginBottom: 30,
               alignItems: "center",
-              justifyContent: "center",
-              marginTop: "20%",
-              marginLeft:'-5%'
+              marginLeft: "15%",
             }}
           >
-            <ButtonNavigate
-              handleOperation={() => {
-                navigation.navigate("BasicInfo", {
-                  needsApproval: needsApproval,
-                  userType: user_type,
-                  userId: user_type_id,
-                  name: name,
-                  mobile: mobile,
+            <View style={{}}>
+              <View
+                style={{
+                  alignSelf:'center',
+                  width: 300,
+                }}
+              >
+                {
+                  <ButtonNavigateArrow
+                    success={success}
+                    handleOperation={handleButtonPress}
+                    backgroundColor={buttonThemeColor}
+                    style={{ color: "white", fontSize: 14 }}
+                    content="Login"
+                    navigateTo="VerifyOtp"
+                    navigationParams={navigationParams}
+                    mobileLength={mobile}
+                    isChecked={isChecked && mobile?.length == 10 && name != ""}
+                  ></ButtonNavigateArrow>
+                }
+              </View>
 
-                  navigatingFrom: "OtpLogin",
-                });
-              }}
-              backgroundColor={ternaryThemeColor}
-              style={{ color: "white", fontSize: 16 }}
-              content="New Registration"
-              navigateTo="BasicInfo"
-              width={"51%"}
-              properties={{
-                needsApproval: needsApproval,
-                userType: user_type,
-                userId: user_type_id,
-                name: name,
-                mobile: mobile,
-                navigatingFrom: "OtpLogin",
-              }}
-            ></ButtonNavigate>
+              <View
+                style={{
+                  width: 300,
+                  marginTop:'15%'
+                }}
+              >
+                <ButtonNavigate
+                  handleOperation={() => {
+                    navigation.navigate("BasicInfo", {
+                      needsApproval: needsApproval,
+                      userType: user_type,
+                      userId: user_type_id,
+                      name: name,
+                      mobile: mobile,
+
+                      navigatingFrom: "OtpLogin",
+                    });
+                  }}
+                  backgroundColor={ternaryThemeColor}
+                  style={{
+                    color: "white",
+                    fontSize: 14,
+                    backgroundColor: ternaryThemeColor,
+                  }}
+                  content="New Registration"
+                  navigateTo="BasicInfo"
+                  // width={"51%"}
+                  properties={{
+                    needsApproval: needsApproval,
+                    userType: user_type,
+                    userId: user_type_id,
+                    name: name,
+                    mobile: mobile,
+                    navigatingFrom: "OtpLogin",
+                  }}
+                ></ButtonNavigate>
+              </View>
+            </View>
           </View>
-        </View>
-        {error && (
-          <ErrorModal
-            modalClose={modalClose}
-            title=""
-            message={message}
-            openModal={error}
-          ></ErrorModal>
-        )}
+          {error && (
+            <ErrorModal
+              modalClose={modalClose}
+              title=""
+              message={message}
+              openModal={error}
+            ></ErrorModal>
+          )}
 
-        {/* {registrationRequired && <View style={{width:"100%",alignItems:'center',justifyContent:"center",marginTop:20}}>
+          {/* {registrationRequired && <View style={{width:"100%",alignItems:'center',justifyContent:"center",marginTop:20}}>
         <PoppinsTextMedium style={{fontSize:18}} content ="Don't have an account ?"></PoppinsTextMedium>
         <ButtonNavigate
               handleOperation={handleNavigationToRegister}
@@ -427,8 +441,9 @@ const OtpLogin = ({ navigation, route }) => {
         </ButtonNavigate>
 
         </View>} */}
-      </ScrollView>
-    </LinearGradient>
+        </ScrollView>
+      </LinearGradient>
+    </ScrollView>
   );
 };
 

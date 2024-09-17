@@ -44,6 +44,7 @@ const ButtonNavigateArrow = (props) => {
         margin: 10,
         paddingLeft: 20,
         paddingRight: 20,
+        height:50,
         flexDirection: "row",
         width: "60%",
       }}

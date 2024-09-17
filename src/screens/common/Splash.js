@@ -852,7 +852,7 @@ const Splash = ({ navigation }) => {
     
     }
     else if (getAppThemeError) {
-      // console.log("getAppThemeError", getAppThemeError)
+      console.log("getAppThemeError", getAppThemeError)
     }
    
   }, [getAppThemeData,getAppThemeError,locationStatusChecked,connected])

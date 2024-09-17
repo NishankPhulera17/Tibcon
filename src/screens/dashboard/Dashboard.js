@@ -222,8 +222,8 @@ const Dashboard = ({ navigation }) => {
         handleLogout();
       }
       else{
-        setError(true)
-      setMessage("problem in fetching membership, kindly retry.")
+        // setError(true)
+      // setMessage("problem in fetching membership, kindly retry.")
       console.log("getActiveMembershipError", getActiveMembershipError)
       }
       
@@ -232,7 +232,7 @@ const Dashboard = ({ navigation }) => {
 
   useEffect(() => {
     if (getKycStatusData) {
-      // console.log("getKycStatusData", getKycStatusData)
+      console.log("getKycStatusData", getKycStatusData)
       if (getKycStatusData?.success) {
         const tempStatus = Object.values(getKycStatusData?.body)
         

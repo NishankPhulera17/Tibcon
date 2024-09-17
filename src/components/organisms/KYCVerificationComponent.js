@@ -75,6 +75,7 @@ import { useNavigation } from '@react-navigation/native';
 const KYCVerificationComponent = (props) => {
     const title = props?.title
     const buttonTitle = props?.buttonTitle
+    let fromDrawer = props?.from == "drawer"
     const navigation = useNavigation()
     const secondaryThemeColor = useSelector(
         state => state.apptheme.secondaryThemeColor,
@@ -91,15 +92,32 @@ const KYCVerificationComponent = (props) => {
     const platformFontSize = Platform.OS === 'ios' ? 14 :16
 
     return (
-        <View style={{...styles.container,backgroundColor:secondaryThemeColor}}>
-            <View style={{width:'60%',height:'100%',alignItems:'center',justifyContent:'center'}}>
-                <PoppinsTextMedium style={{fontWeight:platformFontWeight,fontSize:platformFontSize}} content={title}></PoppinsTextMedium>
-                <TouchableOpacity onPress={()=>{navigation.navigate('Verification')}} style={{...styles.button,backgroundColor:ternaryThemeColor}}>
-                <PoppinsTextMedium style={{color:'white'}} content={buttonTitle}></PoppinsTextMedium>
-                </TouchableOpacity>
-            </View>
+        <View style={{...styles.container,backgroundColor: fromDrawer ? "white" : secondaryThemeColor,}}>
+            {!fromDrawer &&
+                   <View style={{width:'60%',height:'100%',alignItems:'center',justifyContent:'center'}}>
+                   <PoppinsTextMedium style={{fontWeight:platformFontWeight,fontSize:platformFontSize}} content={title}></PoppinsTextMedium>
+                   <TouchableOpacity onPress={()=>{navigation.navigate('Verification')}} style={{...styles.button,backgroundColor:ternaryThemeColor}}>
+                   <PoppinsTextMedium style={{color:'white'}} content={buttonTitle}></PoppinsTextMedium>
+                   </TouchableOpacity>
+               </View>
+   
+            }
+            {
+             fromDrawer &&
+               <View style={{width:'100%',alignItems:'center', marginLeft:'50%', height:60}}>
+               <PoppinsTextMedium style={{fontWeight:platformFontWeight,fontSize:platformFontSize}} content={title}></PoppinsTextMedium>
+               <TouchableOpacity onPress={()=>{navigation.navigate('Verification')}} style={{...styles.button,backgroundColor:ternaryThemeColor}}>
+               <PoppinsTextMedium style={{color:'white'}} content={buttonTitle}></PoppinsTextMedium>
+               </TouchableOpacity>
+           </View> 
+            }
+     
             <View style={{width:"40%",height:'100%',alignItems:'flex-end',justifyContent:'flex-end'}}>
+       {
+        !fromDrawer &&
         <Image style={{height:56,width:120,resizeMode:'contain',marginBottom:4,marginRight:10}} source={require('../../../assets/images/kyc.png')}></Image>
+
+       } 
             </View>
         </View>
     );

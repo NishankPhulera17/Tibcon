@@ -212,11 +212,23 @@ const Profile = ({ navigation }) => {
         console.log("Form Values",temparr)
         setFormValues(temparr);
 
-        const totalLength = temparr.length;
-        const nullLength = temparr.filter((item)=>{
-          return item === null || item === undefined || item === ''
+
+        let newTempArr = temparr
+
+        newTempArr.push(fetchProfileData?.body?.profile_pic)
+
+        console.log("Form Values new", newTempArr);
+
+        const totalLength = newTempArr.length ;
+        // 
+        const nullLength = newTempArr.filter((item) => {
+          return item === null || item === undefined || item === "";
         }).length;
-        const dataPercentage = nullLength / totalLength * 100
+
+        
+
+
+        const dataPercentage = (nullLength / totalLength * 100).toFixed()
 
         console.log("Null length",nullLength, totalLength, dataPercentage)
 

@@ -33,13 +33,15 @@ const TextInputAadhar = (props) => {
   const required = props.required;
   const from = props?.from ? props.from : "";
 
-
   let displayText = props.placeHolder;
   let isEditable = props.isEditable;
+  let data = props.data ? props.data :""
 
   if (displayText == "Aadhar" || displayText == "aadhar") {
     displayText = "Aadhar";
   }
+
+  console.log("isEditable now", isEditable)
 
   const label = props.label;
   const ternaryThemeColor = useSelector(
@@ -230,6 +232,7 @@ const TextInputAadhar = (props) => {
         </View>
         <TextInput
           maxLength={12}
+          editable={isEditable}
           onSubmitEditing={(text) => {
             handleInputEnd(text);
           }}
@@ -251,9 +254,10 @@ const TextInputAadhar = (props) => {
           onChangeText={(text) => {
             handleInput(text);
           }}
-          value={value}
+          value={value ? value : data}
           placeholder={required ? `${label} *` : `${label}`}
         ></TextInput>
+
         {aadharVerified && (
           <View
             style={{
@@ -339,7 +343,7 @@ const TextInputAadhar = (props) => {
           </View>
 
           <TextInput
-            editable={isEditable == false ? isEditable : true}
+            
             maxLength={6}
             keyboardType="numeric"
             style={{

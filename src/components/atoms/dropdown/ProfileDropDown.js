@@ -7,6 +7,7 @@ const ProfileDropDown = (props) => {
     const [topMargin, setTopMargin] = useState(0)
     const data = props.data
     const name = props.title
+    let value = props.value
     console.log("Options",data)
     const handleSelect=(data)=>{
         // console.log(data)
@@ -33,7 +34,7 @@ const ProfileDropDown = (props) => {
     return (
         <View style={{backgroundColor:"white",width:'90%',borderBottomWidth:1,borderColor:'#DDDDDD',alignItems:"center",justifyContent:'center',marginTop:10,marginBottom:10,marginLeft:10}}>
             <TouchableOpacity onPress={()=>{handleOpenList()}} style={{flexDirection:"row",width:'100%',alignItems:"center",justifyContent:'center',height:40,borderBottomWidth:1,borderColor:'#DDDDDD'}}>
-                <Text style={{color:'black',fontSize:16,position:"absolute",left:10,top:10}}>{selected}</Text>
+                <Text style={{color:'black',fontSize:16,position:"absolute",left:10,top:10}}>{value ? value : selected}</Text>
                 <Image style={{height:14,width:14,resizeMode:"contain",position:"absolute",right:10,top:10}} source={require('../../../../assets/images/arrowDown.png')}></Image>
             </TouchableOpacity>
             

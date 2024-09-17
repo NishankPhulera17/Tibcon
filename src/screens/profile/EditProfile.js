@@ -655,16 +655,12 @@ const EditProfile = ({ navigation, route }) => {
                         jsonData={item}
                         from={"profile"}
                         key={index}
-                        isEditable={
-                          formValues[index] === null ||
-                          formValues[index] === undefined || formValues[index] == ""
-                            ? true
-                            : false
-                        }
+                        isEditable={(formValues[index] == null|| formValues[index] == undefined || formValues[index] == "") ? false : false}
                         notVerified={addharVerified}
                         handleData={handleData}
                         placeHolder={item.name}
                         displayText={formValues[index]}
+                        data = {formValues[index]}
                         label={item.label}
                       >
                         {" "}
@@ -708,7 +704,7 @@ const EditProfile = ({ navigation, route }) => {
                         key={index}
                         handleData={handleData}
                         placeHolder={item.name}
-                        isEditable={(formValues[index] == null|| formValues[index] == undefined || formValues[index] == "") ? true : false}
+                        isEditable={(formValues[index] == null|| formValues[index] == undefined || formValues[index] == "") ? false : false}
                         label={item.label}
                         displayText={formValues[index]}
                         panVerified={(verified)=>{setPanVerified(verified)}}

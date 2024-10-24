@@ -114,7 +114,7 @@ const QrCodeScanner = ({ navigation,route }) => {
 
   const { t } = useTranslation();
   // console.log("Selector state",useSelector((state)=>state.appusersdata.userId))
-
+    console.log("location qwerty", location)
   // mutations ----------------------------------------
   const [
     verifyQrFunc,

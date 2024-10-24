@@ -303,7 +303,7 @@ const gifUri = Image.resolveAssetSource(require('../../../assets/gif/loader2.gif
           // console.log("Registration Bouns",body)
             if(!userData?.is_scanned)
             {
-             addRegistrationBonusFunc(body)
+            //  addRegistrationBonusFunc(body)
             }
           } 
        

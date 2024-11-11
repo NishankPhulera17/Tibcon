@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, TouchableOpacity, Image, FlatList, Modal, Pressable, Text, ScrollView } from 'react-native';
 import PoppinsText from '../../components/electrons/customFonts/PoppinsText';
 import PoppinsTextMedium from '../../components/electrons/customFonts/PoppinsTextMedium';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import { useFetchGiftsRedemptionsOfUserMutation } from '../../apiServices/workflow/RedemptionApi';
 import * as Keychain from 'react-native-keychain';
 import { useFetchUserPointsMutation } from '../../apiServices/workflow/rewards/GetPointsApi';
@@ -18,6 +18,7 @@ import PoppinsTextLeftMedium from '../../components/electrons/customFonts/Poppin
 import InputDate from '../../components/atoms/input/InputDate';
 import { useTranslation } from 'react-i18next';
 import Close from 'react-native-vector-icons/Ionicons';
+import { setRedemptionFrom } from '../../../redux/slices/redemptionDataSlice';
 
 const RedeemedHistory = ({ navigation }) => {
   const [message, setMessage] = useState();
@@ -42,6 +43,7 @@ const RedeemedHistory = ({ navigation }) => {
   const appUserData = useSelector(state=>state.appusers.value)
   const id = useSelector(state => state.appusersdata.id);
   const focused = useIsFocused()
+  const dispatch = useDispatch()
   const fetchPoints = async () => {
     const credentials = await Keychain.getGenericPassword();
     const token = credentials.username;
@@ -268,6 +270,7 @@ const RedeemedHistory = ({ navigation }) => {
           console.log("correct redemption date",new Date().getTime(),new Date(redemptionStartData).getTime(),new Date(redemptionEndDate).getTime())
         if(!showKyc)
         {
+          dispatch(setRedemptionFrom("Points"))
           setModalVisible(true)
         }
         else{

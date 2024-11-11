@@ -320,8 +320,9 @@ const BasicInfo = ({ navigation, route }) => {
   
   useEffect(() => {
     if (getFormData) {
+      console.log("Form Fields", JSON.stringify(getFormData))
+
       if (getFormData.message !== "Not Found") {
-        // console.log("Form Fields", JSON.stringify(getFormData))
 
         const values = Object.values(getFormData.body.template)
         setRegistrationForm(values)
@@ -870,19 +871,15 @@ const handleRegistrationFormSubmission = () => {
       </View>
 
 
-<KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={{ height:'90%'}}
-    >
+
       <ScrollView style={{ width: '100%', height:'90%' }}>
       <KeyboardAwareScrollView
-      contentContainerStyle={{ flex: 1 }}
+      contentContainerStyle={{ flex: 1,backgroundColor:"white" }}
       extraScrollHeight={Platform.OS === 'ios' ? 20 : 50} // Adjust this value as needed
       enableOnAndroid={true}
       keyboardOpeningTime={0}
     >
 
-        <KeyboardAvoidingView   behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={{ width: width, backgroundColor: "white", alignItems: "center", justifyContent: 'flex-start', paddingTop: 20 }}>
           {formFound ? <PoppinsTextMedium style={{ color: 'black', fontWeight: '700', fontSize: 18, marginBottom: 40 }} content={t("Please Fill The Following Form To Register")}></PoppinsTextMedium> : <PoppinsTextMedium style={{ color: 'black', fontWeight: '700', fontSize: 18, marginBottom: 40 }} content="No Form Available !!"></PoppinsTextMedium>}
 
           {/* <RegistrationProgress data={["Basic Info","Business Info","Manage Address","Other Info"]}></RegistrationProgress> */}
@@ -1224,10 +1221,8 @@ const handleRegistrationFormSubmission = () => {
               color: 'white',
               fontSize: 16,
             }}></ButtonOval>}
-        </KeyboardAvoidingView>
         </KeyboardAwareScrollView>
       </ScrollView>
-      </KeyboardAvoidingView>
 
 
 

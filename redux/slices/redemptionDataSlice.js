@@ -15,12 +15,15 @@ export const redemptionDataSlice = createSlice({
     },
     setCashConversionF:(state,action)=>{
         state.cashConversion = action.payload
-    }
+    },
+    setRedemptionFrom:(state,action)=>{
+      state.redemptionFrom = action.payload
+  }
     
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setCashConversionF,setPointConversionF } = redemptionDataSlice.actions
+export const { setCashConversionF,setPointConversionF,setRedemptionFrom } = redemptionDataSlice.actions
 
 export default redemptionDataSlice.reducer

@@ -8,6 +8,7 @@ import {
   KeyboardAvoidingView,
   TouchableOpacity,
   Keyboard,
+  Linking,
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import { BaseUrl } from "../../utils/BaseUrl";
@@ -27,6 +28,8 @@ import PoppinsTextLeftMedium from "../../components/electrons/customFonts/Poppin
 import Checkbox from "../../components/atoms/checkbox/Checkbox";
 import { useFetchLegalsMutation } from "../../apiServices/fetchLegal/FetchLegalApi";
 import * as Keychain from "react-native-keychain";
+import Youtube from 'react-native-vector-icons/AntDesign'
+
 
 const OtpLogin = ({ navigation, route }) => {
   const [mobile, setMobile] = useState("");
@@ -357,10 +360,11 @@ const OtpLogin = ({ navigation, route }) => {
               // marginTop: 20,
               marginBottom: 30,
               alignItems: "center",
+              justifyContent:'center',
               marginLeft: "15%",
             }}
           >
-            <View style={{}}>
+            <View style={{alignItems:'center',justifyContent:'center'}}>
               <View
                 style={{
                   alignSelf:'center',
@@ -418,7 +422,14 @@ const OtpLogin = ({ navigation, route }) => {
                     navigatingFrom: "OtpLogin",
                   }}
                 ></ButtonNavigate>
+               
               </View>
+              <TouchableOpacity onPress={()=>{
+                Linking.openURL('https://youtu.be/mFWL11fnXFw')
+              }} style={{flexDirection:"row",alignItems:'center',justifyContent:'center',marginTop:20,right:50}}>
+                <Youtube name="youtube" size = {30} color={ternaryThemeColor}></Youtube>
+                  <PoppinsTextMedium style={{fontSize:20,fontWeight:'800',color:ternaryThemeColor,marginLeft:10}} content="How to register"></PoppinsTextMedium>
+                </TouchableOpacity>
             </View>
           </View>
           {error && (

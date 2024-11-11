@@ -17,8 +17,7 @@ const ErrorModal = (props) => {
   const ternaryThemeColor = useSelector(
     state => state.apptheme.ternaryThemeColor,
   )
-    ? useSelector(state => state.apptheme.ternaryThemeColor)
-    : 'grey';
+   
   const navigateTo = props.navigateTo
 
   console.log("product data in report an issue", productData,navigateTo)

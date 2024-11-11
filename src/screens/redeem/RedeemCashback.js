@@ -19,7 +19,7 @@ import ErrorModal from '../../components/modals/ErrorModal';
 import { useCashPerPointMutation } from '../../apiServices/workflow/rewards/GetPointsApi';
 import { useFetchUserPointsMutation } from '../../apiServices/workflow/rewards/GetPointsApi';
 import MessageModal from '../../components/modals/MessageModal';
-import { setPointConversionF,setCashConversionF } from '../../../redux/slices/redemptionDataSlice';
+import { setPointConversionF,setCashConversionF, setRedemptionFrom } from '../../../redux/slices/redemptionDataSlice';
 import { useGetWalletBalanceMutation } from '../../apiServices/cashback/CashbackRedeemApi';
 import { setWalletBalance } from '../../../redux/slices/pointWalletSlice';
 import { useTranslation } from 'react-i18next';
@@ -98,6 +98,8 @@ const RedeemCashback = ({navigation,route}) => {
       {
         if(Number(cashConversion)>=Number(maxCashConverted))
         {
+          dispatch(setRedemptionFrom("Points"))
+
         navigation.replace('BankAccounts',{type:"Cashback"})
         }
         else{
@@ -120,6 +122,8 @@ const RedeemCashback = ({navigation,route}) => {
         setMessage("Cannot redeem 0 amount")
       }
       else{
+        dispatch(setRedemptionFrom("Wallet"))
+
       navigation.navigate('BankAccounts',{type:"Cashback"})
 
       }

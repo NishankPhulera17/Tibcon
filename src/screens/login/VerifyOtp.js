@@ -87,7 +87,8 @@ const VerifyOtp = ({ navigation, route }) => {
     : '#ef6110';
   const fcmToken = useSelector(state => state.fcmToken.fcmToken)
 
-  // console.log("fcmToken from login", fcmToken)
+
+  console.log("fcmToken from login", fcmToken)
   const icon = useSelector(state => state.apptheme.icon)
     ? useSelector(state => state.apptheme.icon)
     : require('../../../assets/images/demoIcon.png');

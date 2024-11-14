@@ -633,20 +633,24 @@ const Splash = ({ navigation }) => {
   useEffect(() => {
     getUsers();
     getAppTheme("Tibcon")
-    const checkToken = async () => {
-      const fcmToken = await messaging().getToken();
-      if (fcmToken) {
-        try{
+    console.log("in useEffect splash")
 
-          dispatch(setFcmToken(fcmToken))
+    const checkToken = async () => {
+      console.log("in checkToken splash");
+      try {
+        const fcmToken = await messaging().getToken();
+        if (fcmToken) {
+          console.log("FCM Token:", fcmToken);
+          dispatch(setFcmToken(fcmToken));
+        } else {
+          console.log("No FCM token received");
         }
-        catch(e)
-        {
-          console.log("error in dispatching fcm token")
-        }
+      } catch (error) {
+        console.error("Error fetching FCM token:", error);
       }
-    }
+    };
     checkToken()
+
     const requestLocationPermission = async () => {
       try {
         if (Platform.OS === "android") {

@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "267987504542",
-    "project_id": "Tibcon-70b58",
-    "storage_bucket": "Tibcon-70b58.appspot.com"
+    "project_number": "566575365719",
+    "project_id": "tibcon-fdc03",
+    "storage_bucket": "tibcon-fdc03.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:267987504542:android:7391f3698078125ba71a8f",
+        "mobilesdk_app_id": "1:566575365719:android:5fa922c798502a9d73ed12",
         "android_client_info": {
           "package_name": "com.tibcon"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAfvaMYqbyCySpnjuLyFLswBBuQO1zo08c"
+          "current_key": "AIzaSyCOXbfiUgx5smnvjmYKlTWputB0Ao79y3Y"
         }
       ],
       "services": {

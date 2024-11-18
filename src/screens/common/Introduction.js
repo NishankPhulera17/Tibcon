@@ -121,7 +121,7 @@
 // export default Introduction;
 
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, Text, Image, TouchableOpacity, ImageBackground } from 'react-native';
+import { View, StyleSheet, Text, Image, TouchableOpacity, ImageBackground, BackHandler } from 'react-native';
 import DotHorizontalList from '../../components/molecules/DotHorizontalList';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useGetAppUsersDataMutation } from '../../apiServices/appUsers/AppUsersApi';
@@ -165,6 +165,19 @@ const Introduction = ({ navigation }) => {
   useEffect(() => {
     getUsers();
   }, [])
+
+  useEffect(() => {
+    const backAction = () => {
+      // Prevent going back or do any other custom action
+      return true; // Returning true prevents the default back action
+    };
+
+    // Add the back handler event listener
+    const backHandler = BackHandler.addEventListener('hardwareBackPress', backAction);
+
+    // Clean up the event listener when the component unmounts
+    return () => backHandler.remove();
+  }, []);
 
 
   useEffect(() => {

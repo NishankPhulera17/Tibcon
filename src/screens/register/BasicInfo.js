@@ -948,7 +948,7 @@ const handleRegistrationFormSubmission = () => {
                       {!otpVerified && otpVisible &&
                         <KeyboardAvoidingView>
 
-                          <PoppinsTextLeftMedium style={{ marginRight: '70%' }} content="OTP"></PoppinsTextLeftMedium>
+                          {/* <PoppinsTextLeftMedium style={{ marginRight: '70%' }} content="OTP"></PoppinsTextLeftMedium> */}
 
                           <OtpInput
                             getOtpFromComponent={getOtpFromComponent}

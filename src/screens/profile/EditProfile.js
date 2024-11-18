@@ -48,7 +48,6 @@ const EditProfile = ({ navigation, route }) => {
   const [aadhaarVerified, setAadhaarVerified] = useState(true);
   const [panVerified, setPanVerified] = useState(true);
 
-
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
   const [marginB, setMarginB] = useState(0);
@@ -70,6 +69,13 @@ const EditProfile = ({ navigation, route }) => {
   const { t } = useTranslation();
   // const manualkyc = ["fabricator","consumer","retailer","dealer"]
   console.log("form fields and values", JSON.stringify(formFields), formValues);
+
+  const aadharIndex = formFields.findIndex((field) => field.name === "aadhar");
+
+  // Check if there's a value for "aadhar" in formValues
+  const aadharExists =
+    aadharIndex !== -1 && formValues[aadharIndex] ? true : false;
+
   const [
     uploadImageFunc,
     {
@@ -292,9 +298,19 @@ const EditProfile = ({ navigation, route }) => {
         "Credentials successfully loaded for user " + credentials.username
       );
       const token = credentials.username;
-      const params = { token: token, data: tempData };
+      let newTempData = tempData
+
+      if(aadharExists){
+        newTempData = {...newTempData, aadhar: undefined }
+      }
+
+
+      const params = { token: token, data: newTempData };
+
+      
+
       console.log("params from submitProfile", params);
-      if(panVerified){
+      if (panVerified) {
         if (aadhaarVerified) {
           if (isValidEmail) {
             setTimeout(() => {
@@ -310,13 +326,11 @@ const EditProfile = ({ navigation, route }) => {
           setMessage("Please Enter Valid Aadhar");
           setIsClicked(false);
         }
-      }
-      else{
+      } else {
         setError(true);
         setMessage("Please Enter Valid pan");
         setIsClicked(false);
       }
-   
     }
   };
 
@@ -655,12 +669,18 @@ const EditProfile = ({ navigation, route }) => {
                         jsonData={item}
                         from={"profile"}
                         key={index}
-                        isEditable={(formValues[index] == null|| formValues[index] == undefined || formValues[index] == "") ? false : false}
+                        isEditable={
+                          formValues[index] == null ||
+                          formValues[index] == undefined ||
+                          formValues[index] == ""
+                            ? false
+                            : false
+                        }
                         notVerified={addharVerified}
                         handleData={handleData}
                         placeHolder={item.name}
                         displayText={formValues[index]}
-                        data = {formValues[index]}
+                        data={formValues[index]}
                         label={item.label}
                       >
                         {" "}
@@ -694,7 +714,15 @@ const EditProfile = ({ navigation, route }) => {
                     </View>
                   );
                 } else if (item.name === "pan") {
-                  console.log("val indesss===>",formValues[index],formValues[index] == null|| formValues[index] == undefined || formValues[index] != "" ? true : false)
+                  console.log(
+                    "val indesss===>",
+                    formValues[index],
+                    formValues[index] == null ||
+                      formValues[index] == undefined ||
+                      formValues[index] != ""
+                      ? true
+                      : false
+                  );
                   return (
                     <View>
                       <TextInputPan
@@ -704,10 +732,18 @@ const EditProfile = ({ navigation, route }) => {
                         key={index}
                         handleData={handleData}
                         placeHolder={item.name}
-                        isEditable={(formValues[index] == null|| formValues[index] == undefined || formValues[index] == "") ? false : false}
+                        isEditable={
+                          formValues[index] == null ||
+                          formValues[index] == undefined ||
+                          formValues[index] == ""
+                            ? true
+                            : false
+                        }
                         label={item.label}
                         displayText={formValues[index]}
-                        panVerified={(verified)=>{setPanVerified(verified)}}
+                        panVerified={(verified) => {
+                          setPanVerified(verified);
+                        }}
                       >
                         {" "}
                       </TextInputPan>

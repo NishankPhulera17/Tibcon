@@ -13,7 +13,7 @@ const MessageModal = (props) => {
     const navigation = useNavigation()
     const navigateTo = props.navigateTo
     const params = props.params
-    console.log(navigateTo,params)
+    console.log("navigateTo",navigateTo,params)
     useEffect(() => {
       const backHandler = BackHandler.addEventListener('hardwareBackPress', () => true)
       return () => backHandler.remove()
@@ -39,14 +39,13 @@ const MessageModal = (props) => {
   return (
     <View style={styles.centeredView}>
       <Modal
-      
         animationType="slide"
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
-            props.modalClose()
-          setModalVisible(!modalVisible);
-         navigateTo &&  navigation.navigate(navigateTo)
+        //     props.modalClose()
+        //   setModalVisible(!modalVisible);
+        //  navigateTo &&  navigation.navigate(navigateTo)
         }}>
         <View style={styles.centeredView}>
           <View style={{...styles.modalView,borderWidth:3,borderColor:'#2FBA7E'}}>

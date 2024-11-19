@@ -33,14 +33,21 @@ const ErrorModal = (props) => {
       setModalVisible(false)
     }
   }, [])
+
   useEffect(()=>{
     // navigation.navigate(navigateTo)
   },[navigateTo])
+
   const closeModal = () => {
-   
-    
+    setTimeout(() => {
     navigateTo && navigationType=="navigate" &&  navigation.navigate(navigateTo)
+      
+    }, 1000);
+    
+    setTimeout(() => {
     navigateTo &&  navigation.replace(navigateTo)
+      
+    }, 1000);
     
     props.modalClose()
     setModalVisible(!modalVisible)

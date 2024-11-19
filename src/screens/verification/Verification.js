@@ -180,7 +180,8 @@ useEffect(()=>{
     console.log("verifyAadharError",verifyAadharError)
     setAadhar("")
     setError(true)
-setMessage(verifyAadharError?.data?.message)
+    setMessage(verifyAadharError?.data?.message)
+    // setMessage("an error occured")
   }
   },[verifyAadharError,verifyAadharData])
 

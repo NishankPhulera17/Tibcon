@@ -7,11 +7,10 @@ import { useTranslation } from 'react-i18next';
 import Cancel from 'react-native-vector-icons/MaterialIcons'
 
 
-const ErrorModal = (props) => {
+const WarningModal = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
   const productData = props.productData;
   const type = props.type
-  const warning = props.warning ? props.warning : false
   const navigationType = props?.navigationType
   const title = props.title
   const navigation = useNavigation()
@@ -34,21 +33,14 @@ const ErrorModal = (props) => {
       setModalVisible(false)
     }
   }, [])
-
   useEffect(()=>{
     // navigation.navigate(navigateTo)
   },[navigateTo])
-
   const closeModal = () => {
-    setTimeout(() => {
-    navigateTo && navigationType=="navigate" &&  navigation.navigate(navigateTo)
-      
-    }, 1000);
+   
     
-    setTimeout(() => {
+    navigateTo && navigationType=="navigate" &&  navigation.navigate(navigateTo)
     navigateTo &&  navigation.replace(navigateTo)
-      
-    }, 1000);
     
     props.modalClose()
     setModalVisible(!modalVisible)
@@ -77,15 +69,15 @@ const ErrorModal = (props) => {
          navigateTo &&  navigation.replace(navigateTo)
         }}>
         <View style={styles.centeredView}>
-          <View style={{ ...styles.modalView, borderColor: warning ? '#FFAD3C' : '#c43b3d'}}>
+          <View style={{ ...styles.modalView}}>
             {/* <Image style={{ width: 80, height: 80, resizeMode: 'contain' }} source={require('../../../assets/images/failed.png')}></Image> */}
-         {!warning &&   <Cancel name="cancel" size = {100} color="#FF3436"></Cancel>} 
+            {/* <Cancel name="cancel" size = {100} color="#FF3436"></Cancel> */}
             {title && <Text style={{ color: '#FF5D5D', fontSize: 24, fontWeight: '700' }}>{title}</Text>}
-            {!title && <Text style={{ color: warning ? "#FFAD3C":'#FF5D5D', fontSize: 24, fontWeight: '700' }}>{warning ? 'Warning' :"Error"} </Text>}
+            {/* {!title && <Text style={{ color: '#F7C703', fontSize: 24, fontWeight: '700' }}>{t("Warning")}</Text>} */}
 
-            <Text style={{ ...styles.modalText, fontSize: 20, fontWeight: '600', color: 'black' }}>{props.message}</Text>
+            <Text style={{ ...styles.modalText, fontSize: 20, fontWeight: '600', color: 'green' }}>{props.message}</Text>
             <Pressable
-              style={{ ...styles.button, backgroundColor: warning ? "#FFAD3C":'#FF3436', width: 240 }}
+              style={{ ...styles.button, backgroundColor: 'green', width: 240 }}
               onPress={() => closeModal()}>
               <Text style={styles.textStyle}>{t("Try Again")}</Text>
             </Pressable>
@@ -131,7 +123,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5,
     borderWidth:3,
-
+    borderColor:"#F7C703"
    
   },
   button: {
@@ -156,4 +148,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ErrorModal;
+export default WarningModal;

@@ -48,7 +48,7 @@ const [locationPermission, setLocationPermissionEnabled] = useState(false)
       );
     } else if (Platform.OS === 'android') {
       LocationServicesDialogBox.checkLocationServicesIsEnabled({
-        message: "<h2 style='color: #0af13e'>Use Location ?</h2>tibcon wants to change your device settings:<br/><br/>Enable location to use the application.<br/><br/><a href='#'>Learn more</a>",
+        message: "<h2 style='color: #0af13e'>Use Location ?</h2>TIBCON wants to change your device settings:<br/><br/>Enable location to use the application.<br/><br/><a href='#'>Learn more</a>",
         ok: "YES",
         cancel: "NO",
         enableHighAccuracy: true,

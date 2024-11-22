@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, Text, Image, ImageBackground, PermissionsAndroid, Platform, Alert, Linking, BackHandler } from 'react-native';
+import { View, StyleSheet, Text, Image, ImageBackground, PermissionsAndroid, Platform, Alert, Linking, BackHandler,TouchableOpacity } from 'react-native';
 import { useGetAppThemeDataMutation } from '../../apiServices/appTheme/AppThemeApi';
 import { useSelector, useDispatch } from 'react-redux'
 import { setPrimaryThemeColor, setSecondaryThemeColor, setIcon, setIconDrawer, setTernaryThemeColor, setOptLogin, setPasswordLogin, setButtonThemeColor, setColorShades, setKycOptions, setIsOnlineVeriification, setSocials, setWebsite, setCustomerSupportMail, setCustomerSupportMobile, setExtraFeatures } from '../../../redux/slices/appThemeSlice';
@@ -45,6 +45,9 @@ import SpInAppUpdates, {
 } from 'sp-react-native-in-app-updates';
 import { useInternetSpeedContext } from '../../Contexts/useInternetSpeedContext';
 import { setSlowNetwork } from '../../../redux/slices/internetSlice';
+import ModalWithBorder from '../../components/modals/ModalWithBorder';
+import PoppinsTextLeftMedium from '../../components/electrons/customFonts/PoppinsTextLeftMedium';
+import Close from 'react-native-vector-icons/Ionicons';
 
 
 const Splash = ({ navigation }) => {
@@ -56,6 +59,8 @@ const Splash = ({ navigation }) => {
   const [locationBoxEnabled, setLocationBoxEnabled] = useState(false)
   const[userList,setUserList] = useState();
   const [fetchLocation, setfetchLocation] = useState(false)
+  const [notifModal, setNotifModal] = useState(false)
+  const [notifData, setNotifData] = useState(null)
   const [showLoading, setShowLoading] = useState(true)
   const [message, setMessage] = useState();
   const [success, setSuccess] = useState(false);
@@ -205,7 +210,15 @@ const Splash = ({ navigation }) => {
     }
    
   }, [])
-  
+  useEffect(() => {
+    const unsubscribe = messaging().onMessage(async remoteMessage => {
+     setNotifModal(true)
+  setNotifData(remoteMessage?.notification)
+  console.log("remote message",remoteMessage)
+    });
+    
+    return unsubscribe;
+  }, []);
   
   useEffect(() => {
     if (getTermsData) {
@@ -924,7 +937,30 @@ const Splash = ({ navigation }) => {
       </View>
     )
   }
+  const notifModalFunc = () => {
+    return (
+      <View style={{width:'100%'  }}>
+        <View style={{ width:'100%', alignItems:'center',marginTop:20}}>
+          <View>
+          {/* <Bell name="bell" size={18} style={{marginTop:5}} color={ternaryThemeColor}></Bell> */}
 
+          </View>
+          <PoppinsTextLeftMedium content={notifData?.title ? notifData?.title : ""} style={{ color: "red", fontWeight:'800', fontSize:20, marginTop:8 }}></PoppinsTextLeftMedium>
+      
+          <PoppinsTextLeftMedium content={notifData?.body ? notifData?.body : ""} style={{ color: '#000000', marginTop:10, padding:10, fontSize:15, fontWeight:'600' }}></PoppinsTextLeftMedium>
+        </View>
+
+        <TouchableOpacity style={[{
+          backgroundColor: "red", padding: 6, borderRadius: 5, position: 'absolute', top: -10, right: -10,
+        }]} onPress={() => setNotifModal(false)} >
+          <Close name="close" size={17} color="#ffffff" />
+        </TouchableOpacity>
+
+
+
+      </View>
+    )
+  }
 
   // console.log("internet connection status",connected)
   return (
@@ -932,7 +968,13 @@ const Splash = ({ navigation }) => {
       <ImageBackground resizeMode='stretch' style={{  height: '100%', width: '100%', alignItems:'center',justifyContent:'center' }} source={require('../../../assets/images/splash3.png')}> 
       {/* <InternetModal visible={!connected} comp = {NoInternetComp} /> */}
       {/* {isSlowInternet && <InternetModal visible={isSlowInternet} comp = {SlowInternetComp} /> } */}
-
+      {notifModal &&  <ModalWithBorder
+            modalClose={() => {
+              setNotifModal(false)
+            }}
+            message={"message"}
+            openModal={notifModal}
+            comp={notifModalFunc}></ModalWithBorder>}
      
       {error &&  <ErrorModal
           modalClose={modalClose}

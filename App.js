@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react';
-import {View, StyleSheet, SafeAreaView,Alert,Linking, Platform} from 'react-native';
+import {View, StyleSheet, SafeAreaView,Alert,Linking, Platform, TouchableOpacity} from 'react-native';
 import StackNavigator from './src/navigation/StackNavigator';
 import { store } from './redux/store';
 import { Provider } from 'react-redux'
@@ -10,12 +10,23 @@ import ModalWithBorder from './src/components/modals/ModalWithBorder';
 import NetInfo from "@react-native-community/netinfo";
 import { PaperProvider } from 'react-native-paper';
 import { InternetSpeedProvider } from './src/Contexts/useInternetSpeedContext';
+import PoppinsTextLeftMedium from './src/components/electrons/customFonts/PoppinsTextLeftMedium';
 
 const App = () => {
   const [notifModal, setNotifModal] = useState(false)
   const [notifData, setNotifData] = useState(null)
 
-
+  async function requestUserPermission() {
+    const authStatus = await messaging().requestPermission();
+    const enabled =
+      authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
+      authStatus === messaging.AuthorizationStatus.PROVISIONAL;
+  
+    if (enabled) {
+      console.log('Authorization status:', authStatus);
+    }
+  }
+  requestUserPermission()
   console.log("Version check",JSON.stringify(VersionCheck.getPlayStoreUrl({ packageName: 'com.Genefied.Tibcon' })))
     useEffect(() => {
         const unsubscribe = messaging().onMessage(async remoteMessage => {
@@ -86,13 +97,13 @@ const App = () => {
               {/* <Bell name="bell" size={18} style={{marginTop:5}} color={ternaryThemeColor}></Bell> */}
     
               </View>
-              <PoppinsTextLeftMedium content={notifData?.title ? notifData?.title : ""} style={{ color: ternaryThemeColor, fontWeight:'800', fontSize:20, marginTop:8 }}></PoppinsTextLeftMedium>
+              <PoppinsTextLeftMedium content={notifData?.title ? notifData?.title : ""} style={{ color: "red", fontWeight:'800', fontSize:20, marginTop:8 }}></PoppinsTextLeftMedium>
           
               <PoppinsTextLeftMedium content={notifData?.title ? notifData?.title : ""} style={{ color: '#000000', marginTop:10, padding:10, fontSize:15, fontWeight:'600' }}></PoppinsTextLeftMedium>
             </View>
     
             <TouchableOpacity style={[{
-              backgroundColor: ternaryThemeColor, padding: 6, borderRadius: 5, position: 'absolute', top: -10, right: -10,
+              backgroundColor: "red", padding: 6, borderRadius: 5, position: 'absolute', top: -10, right: -10,
             }]} onPress={() => setNotifModal(false)} >
               <Close name="close" size={17} color="#ffffff" />
             </TouchableOpacity>

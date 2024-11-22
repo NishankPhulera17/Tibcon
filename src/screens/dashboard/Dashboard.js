@@ -140,7 +140,7 @@ const Dashboard = ({ navigation }) => {
     const unsubscribe = messaging().onMessage(async remoteMessage => {
      setNotifModal(true)
   setNotifData(remoteMessage?.notification)
-  // console.log("remote message",remoteMessage)
+  console.log("remote message",remoteMessage)
     });
     
     return unsubscribe;

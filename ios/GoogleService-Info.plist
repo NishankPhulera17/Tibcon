@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.tibcon</string>
+	<string>com.Genefied.TibconRewards</string>
 	<key>PROJECT_ID</key>
 	<string>tibcon-fdc03</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:566575365719:ios:e8c2dc53f56de9e273ed12</string>
+	<string>1:566575365719:ios:02f18eec7601a9ce73ed12</string>
 </dict>
 </plist>

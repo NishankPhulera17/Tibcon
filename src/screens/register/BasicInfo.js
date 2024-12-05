@@ -62,6 +62,8 @@ const BasicInfo = ({ navigation, route }) => {
   const [modalTitle, setModalTitle] = useState()
   const [needsAadharVerification, setNeedsAadharVerification] = useState(false)
   const [location, setLocation] = useState()
+  const [lat, setLat] = useState()
+  const [lon, setLon] = useState()
   const [formFound, setFormFound] = useState(true)
   const [isCorrectPincode, setIsCorrectPincode] = useState(true)
   const [otp, setOtp] = useState("")
@@ -242,7 +244,8 @@ const BasicInfo = ({ navigation, route }) => {
           address: formattedAddress === undefined ? "N/A" : formattedAddress
 
         }
-
+        setLat(json.results[0].geometry.location.lat === undefined ? "N/A" : json.results[0].geometry.location.lat)
+        setLon(json.results[0].geometry.location.lng === undefined ? "N/A" : json.results[0].geometry.location.lng)
         const addressComponent = json.results[0].address_components
         // console.log("addressComponent", addressComponent)
         for (let i = 0; i <= addressComponent.length; i++) {
@@ -742,7 +745,8 @@ const handleRegistrationFormSubmission = () => {
   for (let i = 0; i < responseArray.length; i++) {
       inputFormData[responseArray[i].name] = responseArray[i].value;
   }
-
+  inputFormData['lat'] = lat
+  inputFormData['log'] = lon
   const body = inputFormData;
   // console.log("registration output", body);
 

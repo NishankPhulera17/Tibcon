@@ -681,6 +681,7 @@ const QrCodeScanner = ({ navigation, route }) => {
         },2000)
         addedqr.push(data);
       } else {
+        setAnimationModal(false)
         setError(true);
         setWarning(true)
         setMessage("This QR is already in your list");

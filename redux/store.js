@@ -25,6 +25,7 @@ import authSlice from './slices/authSlice';
 import termsPolicySlice from './slices/termsPolicySlice';
 import drawerDataSlice from './slices/drawerDataSlice';
 import cameraStatusSlice from './slices/cameraStatusSlice';
+import campaignSlice from './slices/campaignSlice';
 
 export const store = configureStore({
   reducer: {
@@ -51,7 +52,8 @@ export const store = configureStore({
     auth:authSlice,
     termsPolicy:termsPolicySlice,
     drawerData: drawerDataSlice,
-    cameraStatus:cameraStatusSlice
+    cameraStatus:cameraStatusSlice,
+    campaign:campaignSlice
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(baseApi.middleware, internetMiddleware), // Include networkMiddleware

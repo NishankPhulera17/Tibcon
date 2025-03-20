@@ -70,8 +70,8 @@ const AddUpi = ({navigation}) => {
   useEffect(() => {
     if (addBankDetailsData) {
       console.log('addBankDetailsData', addBankDetailsData);
-      if (addBankDetailsData.message === 'Bank Account Created') {
-        addBankDetailsData.body.bene_name == null &&
+      if (addBankDetailsData.success === true) {
+        
           getInitials(addBankDetailsData.body.bene_details.bene_name);
         setName(addBankDetailsData.body.bene_details.bene_name);
         setData(addBankDetailsData.body)
@@ -167,6 +167,7 @@ console.log("deleteBankError",deleteBankError)
     setUpi(data);
   };
   const ModalContent = () => {
+    console.log("opened upi modal")
     return (
       <View
         style={{

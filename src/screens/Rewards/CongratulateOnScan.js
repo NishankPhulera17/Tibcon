@@ -39,6 +39,7 @@ import FastImage from "react-native-fast-image";
 import { useGetMappingDetailsByAppUserIdMutation } from "../../apiServices/userMapping/userMappingApi";
 import { setFirstScan } from "../../../redux/slices/scanningSlice";
 import MessageModal from "../../components/modals/MessageModal";
+import { setShowCampaign } from "../../../redux/slices/campaignSlice";
 
 
 const CongratulateOnScan = ({ navigation, route }) => {
@@ -485,14 +486,12 @@ const gifUri = Image.resolveAssetSource(require('../../../assets/gif/loader2.gif
         workflowProgram: workflowProgram.slice(1),
         rewardType: workflowProgram[0],
       });
-    } else if (workflowProgram.length === 0) {
-      setTimeout(() => {
-        navigation.navigate("Dashboard");
-      }, 2000);
-    }
+    } 
   };
   const navigateDashboard = () => {
-    navigation.navigate("Dashboard");
+    dispatch(setShowCampaign(false))
+
+    navigation.reset({ index: '0', routes: [{ name: 'Dashboard' }] })
   };
   const navigateQrScanner = () => {
     // navigation.navigate('EnableCameraScreen')

@@ -77,9 +77,9 @@ const Notification = ({ navigation }) => {
                 </TouchableOpacity>
                 <Text style={{ color: 'white', marginLeft: 10, fontWeight: '500' }}>{t("Notification")}</Text>
             </View>
-            <ScrollView style={{ height: '90%', backgroundColor: buttonThemeColor, width:'100%' }}>
+            <ScrollView style={{minHeight:'90%', backgroundColor: buttonThemeColor, width:'100%' }}>
             
-            <View style={{ paddingBottom: 120, height: height, backgroundColor: 'white', width: '100%', borderTopLeftRadius: 30, borderTopRightRadius: 30, marginTop: 20 }}>
+            <View style={{ paddingBottom: 120, backgroundColor: 'white', width: '100%', borderTopLeftRadius: 30, borderTopRightRadius: 30, marginTop: 20 }}>
                 {
                     notifData?.body?.data?.map((item, index) => {
                         return <Notificationbar notification={item?.title} body={item?.body} key={index} ></Notificationbar>

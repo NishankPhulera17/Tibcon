@@ -34,6 +34,7 @@ import Youtube from 'react-native-vector-icons/AntDesign'
 const OtpLogin = ({ navigation, route }) => {
   const [mobile, setMobile] = useState("");
   const [name, setName] = useState("");
+  const [showData, setShowData] = useState(false)
   const [success, setSuccess] = useState(false);
   const [message, setMessage] = useState();
   const [error, setError] = useState(false);
@@ -361,13 +362,14 @@ const OtpLogin = ({ navigation, route }) => {
               marginBottom: 30,
               alignItems: "center",
               justifyContent:'center',
-              marginLeft: "15%",
+              
             }}
           >
-            <View style={{alignItems:'center',justifyContent:'center'}}>
+            <View style={{alignItems:'center',justifyContent:'center',width:'100%'}}>
               <View
                 style={{
-                  alignSelf:'center',
+                  alignItems:'center',
+                  justifyContent:'center',
                   width: 300,
                 }}
               >
@@ -389,7 +391,9 @@ const OtpLogin = ({ navigation, route }) => {
               <View
                 style={{
                   width: 300,
-                  marginTop:'15%'
+                  marginTop:'10%',
+                  alignItems:'center',
+                  justifyContent:'center'
                 }}
               >
                 <ButtonNavigate
@@ -400,7 +404,6 @@ const OtpLogin = ({ navigation, route }) => {
                       userId: user_type_id,
                       name: name,
                       mobile: mobile,
-
                       navigatingFrom: "OtpLogin",
                     });
                   }}
@@ -425,11 +428,24 @@ const OtpLogin = ({ navigation, route }) => {
                
               </View>
               <TouchableOpacity onPress={()=>{
+                setShowData(!showData)
                 Linking.openURL('https://youtu.be/mFWL11fnXFw')
-              }} style={{flexDirection:"row",alignItems:'center',justifyContent:'center',marginTop:20,right:50}}>
+              }} style={{flexDirection:"row",alignItems:'center',justifyContent:'center',marginTop:20}}>
                 <Youtube name="youtube" size = {30} color={ternaryThemeColor}></Youtube>
                   <PoppinsTextMedium style={{fontSize:20,fontWeight:'800',color:ternaryThemeColor,marginLeft:10}} content="How to register"></PoppinsTextMedium>
                 </TouchableOpacity>
+                {/* {showData && <View style={{alignItems:'center', justifyContent:'center', flexDirection:'row', width:'100%',marginTop:15,padding:10}}>
+                  <TouchableOpacity onPress={()=>{
+                    Linking.openURL('https://youtu.be/mFWL11fnXFw')
+                  }} style={{alignItems:'center',justifyContent:'center', width:'40%'}}>
+                  <PoppinsTextLeftMedium style={{color:'grey', fontWeight:'700', fontSize:20}} content="Hindi"></PoppinsTextLeftMedium>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={()=>{
+                    Linking.openURL('https://youtu.be/mFWL11fnXFw')
+                  }} style={{alignItems:'center',justifyContent:'center', width:'40%'}}>
+                  <PoppinsTextLeftMedium style={{color:'grey', fontWeight:'700', fontSize:20}} content="English"></PoppinsTextLeftMedium>
+                  </TouchableOpacity>
+                </View>} */}
             </View>
           </View>
           {error && (

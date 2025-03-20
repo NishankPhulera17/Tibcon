@@ -438,14 +438,14 @@ const Profile = ({ navigation }) => {
               style={{ height: 40, width: 40, borderRadius: 20, backgroundColor: "white", borderWidth: 1, borderColor: ternaryThemeColor, alignItems: "center", justifyContent: 'center' }}>
               <Edit name="edit" size={20} color={ternaryThemeColor}></Edit>
             </TouchableOpacity>
-            <TouchableOpacity
+            {/* <TouchableOpacity
               onPress={() => {
                deleteID();
               }}
               style={{ height: 40, width: 40, borderRadius: 20, backgroundColor: "white", borderWidth: 1, borderColor: ternaryThemeColor, alignItems: "center", justifyContent: 'center',marginTop:20 }}>
                <Delete name="delete" size={24} color={ternaryThemeColor}></Delete>
               
-            </TouchableOpacity>
+            </TouchableOpacity> */}
           </View>
         </View>
 

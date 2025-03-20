@@ -46,7 +46,7 @@ const ErrorModal = (props) => {
     }, 1000);
     
     setTimeout(() => {
-    navigateTo &&  navigation.replace(navigateTo)
+    navigateTo &&  navigation.navigate(navigateTo)
       
     }, 1000);
     
@@ -74,7 +74,7 @@ const ErrorModal = (props) => {
         onRequestClose={() => {
           props.modalClose()
           setModalVisible(!modalVisible);
-         navigateTo &&  navigation.replace(navigateTo)
+         navigateTo &&  navigation.navigate(navigateTo)
         }}>
         <View style={styles.centeredView}>
           <View style={{ ...styles.modalView, borderColor: warning ? '#FFAD3C' : '#c43b3d'}}>

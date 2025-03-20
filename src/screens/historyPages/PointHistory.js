@@ -205,8 +205,8 @@ const PointHistory = ({ navigation }) => {
     const PointCategoryTab=()=>{
         const [type, setType] = useState("")
         return(
-            <ScrollView horizontal={true} contentContainerStyle={{alignItems:'center',justifyContent:'center'}} style={{backgroundColor:'white',height:70,elevation:1,opacity:0.8,borderWidth:1,borderColor:"grey"}}>
-                {registrationRequired.includes(userData.user_type) && 
+            <ScrollView horizontal={true} contentContainerStyle={{alignItems:'center',justifyContent:'center',width:'100%'}} style={{backgroundColor:'white',height:70,elevation:1,opacity:0.8,borderWidth:1,borderColor:"grey"}}>
+                
                 <TouchableOpacity  onPress={()=>{
                     (async () => {
                         const credentials = await Keychain.getGenericPassword();
@@ -220,54 +220,59 @@ const PointHistory = ({ navigation }) => {
                       })();
                     fetchPoints()
                     setType("regular")
-                }} style={{height:'100%',width:120,alignItems:"center",justifyContent:'center',backgroundColor:type==="regular" ? "#DDDDDD":"white"}}>
+                }} style={{height:'100%',width:"33%",alignItems:"center",justifyContent:'center',backgroundColor:type==="regular" ? "#DDDDDD":"white"}}>
                     {/* <PoppinsTextMedium content="Regular Points" style={{color:'black',fontWeight:'700',fontSize:14}}></PoppinsTextMedium> */}
                     <PoppinsTextMedium content={t("regular points")} style={{color:'black',fontWeight:'700',fontSize:14}}></PoppinsTextMedium>
 
                 </TouchableOpacity>
                 
-                }
-                 {registrationRequired.includes(userData.user_type) && 
+                 
                 <TouchableOpacity onPress={()=>{
                     getRegistrationPoints("points_sharing")
                     setType("extra")
-                }} style={{height:'100%',width:120,alignItems:"center",justifyContent:'center',borderLeftWidth:1,borderRightWidth:1,borderColor:'#DDDDDD',backgroundColor:type==="extra" ? "#DDDDDD":"white"}}>
+                }} style={{height:'100%',width:"33%",alignItems:"center",justifyContent:'center',borderLeftWidth:1,borderRightWidth:1,borderColor:'#DDDDDD',backgroundColor:type==="extra" ? "#DDDDDD":"white"}}>
                     {/* <PoppinsTextMedium content="Extra Points" style={{color:'black',fontWeight:'700',fontSize:14}}></PoppinsTextMedium> */}
                     <PoppinsTextMedium content={t("extra points")} style={{color:'black',fontWeight:'700',fontSize:14}}></PoppinsTextMedium>
 
                 </TouchableOpacity>
                 
-                }
-                 {registrationRequired.includes(userData.user_type) && 
+                 {/* {registrationRequired.includes(userData.user_type) && 
                 <TouchableOpacity onPress={()=>{
                     getRegistrationPoints("registration_bonus")
                     setType("registration_bonus")
                 }} style={{height:'100%',width:120,alignItems:"center",justifyContent:'center',backgroundColor:type==="registration" ? "#DDDDDD":"white"}}>
-                    {/* <PoppinsTextMedium content="Registration Bonus" style={{color:'black',fontWeight:'700',fontSize:14}}></PoppinsTextMedium> */}
                     <PoppinsTextMedium content={t("Registration Bonus")} style={{color:'black',fontWeight:'700',fontSize:14}}></PoppinsTextMedium>
 
                 </TouchableOpacity>    
-                }
+                } */}
 
-                {registrationRequired.includes(userData.user_type) && 
+                {/* {registrationRequired.includes(userData.user_type) && 
                 <TouchableOpacity onPress={()=>{
                     getRegistrationPoints("annual_kitty_2024_25")
                     setType("Annual Kitty")
                 }} style={{height:'100%',width:120,alignItems:"center",justifyContent:'center',backgroundColor:type==="Annual Kitty" ? "#DDDDDD":"white"}}>
-                    {/* <PoppinsTextMedium content="Registration Bonus" style={{color:'black',fontWeight:'700',fontSize:14}}></PoppinsTextMedium> */}
                     <PoppinsTextMedium content={t("Annual Kitty")} style={{color:'black',fontWeight:'700',fontSize:14}}></PoppinsTextMedium>
 
                 </TouchableOpacity>    
-                }
+                } */}
 
-                <TouchableOpacity onPress={()=>{
+                {/* <TouchableOpacity onPress={()=>{
                     getRegistrationPoints("tds_deducted_2024_25")
                     setType("TDS Deducted")
                 }} style={{height:'100%',width:120,alignItems:"center",justifyContent:'center',backgroundColor:type==="TDS Deducted" ? "#DDDDDD":"white",borderLeftWidth:1,borderColor:'#DDDDDD'}}>
-                    {/* <PoppinsTextMedium content="Registration Bonus" style={{color:'black',fontWeight:'700',fontSize:14}}></PoppinsTextMedium> */}
                     <PoppinsTextMedium content={t("TDS Deducted")} style={{color:'black',fontWeight:'700',fontSize:14}}></PoppinsTextMedium>
 
+                </TouchableOpacity> */}
+                
+                <TouchableOpacity onPress={()=>{
+                    getRegistrationPoints("direct_transfer")
+                    setType("direct")
+                }} style={{height:'100%',width:"33%",alignItems:"center",justifyContent:'center',borderLeftWidth:1,borderRightWidth:1,borderColor:'#DDDDDD',backgroundColor:type==="direct" ? "#DDDDDD":"white"}}>
+                    {/* <PoppinsTextMedium content="Extra Points" style={{color:'black',fontWeight:'700',fontSize:14}}></PoppinsTextMedium> */}
+                    <PoppinsTextMedium content={t("Direct transfer")} style={{color:'black',fontWeight:'700',fontSize:14}}></PoppinsTextMedium>
+
                 </TouchableOpacity>
+                
                 
             </ScrollView>
         )
@@ -384,6 +389,7 @@ const PointHistory = ({ navigation }) => {
         const productCode = props.productCode
         const visibleCode = props.visibleCode
         const time = props.time
+        const remarks = props.remarks
         const amount = props.amount
         const status = props.status
         const image = props.image
@@ -403,6 +409,8 @@ const PointHistory = ({ navigation }) => {
 
                     {type!=="registration_bonus" &&<PoppinsTextMedium style={{ fontWeight: '400', fontSize: 12, color: 'black' }} content={`Product Code : ${productCode}`}></PoppinsTextMedium>}
                     {type!=="registration_bonus" && <PoppinsTextMedium style={{ fontWeight: '400', fontSize: 12, color: 'black' }} content={`Visible Code : ${visibleCode}`}></PoppinsTextMedium>}
+                    {remarks!=null && remarks!=undefined && <PoppinsTextMedium style={{ fontWeight: '400', fontSize: 12, color: 'black' }} content={`Remarks : ${remarks}`}></PoppinsTextMedium>}
+
                     <PoppinsTextMedium style={{ fontWeight: '400', fontSize: 12, color: 'black' }} content={date}></PoppinsTextMedium>
                     
                     <PoppinsTextMedium style={{ fontWeight: '400', fontSize: 12, color: 'black' }} content={time}></PoppinsTextMedium>
@@ -453,7 +461,7 @@ const PointHistory = ({ navigation }) => {
            
             <DisplayEarnings></DisplayEarnings>
             <Header></Header>
-            {/* <PointCategoryTab></PointCategoryTab> */}
+            <PointCategoryTab></PointCategoryTab>
 
             {
                 displayList.length==0 && !isLoading &&
@@ -492,7 +500,7 @@ const PointHistory = ({ navigation }) => {
                 renderItem={({ item, index }) => {
                     console.log(index + 1, item)
                     return (
-                        <ListItem visibleCode = {item.batch_running_code} type = {item?.cause?.type} image={item?.images ===undefined ? undefined : item?.images ===null ? undefined:item?.images[0]} description={item?.product_name} productCode={item?.product_code} amount={item?.points} status={item?.status} points={item?.points} is_reverted= {item?.is_reverted} date = {moment(item?.created_at).format("DD-MMM-YYYY")} time={moment(item?.created_at).format("HH:mm a")}/>
+                        <ListItem remarks= {item.remarks} visibleCode = {item.batch_running_code} type = {item?.cause?.type} image={item?.images ===undefined ? undefined : item?.images ===null ? undefined:item?.images[0]} description={item?.product_name} productCode={item?.product_code} amount={item?.points} status={item?.status} points={item?.points} is_reverted= {item?.is_reverted} date = {moment(item?.created_at).format("DD-MMM-YYYY")} time={moment(item?.created_at).format("HH:mm a")}/>
                     )
                 }}
                 keyExtractor={(item,index) => index}

@@ -388,7 +388,7 @@ const RedeemRewardHistory = ({navigation}) => {
             <View style={{flexDirection:"row",height:50,width:'100%',alignItems:"center",justifyContent:"flex-start"}}>
                 <PoppinsText content={name} style={{color:'white',fontSize:20,marginLeft:20}}></PoppinsText>
                 {
-                getActiveMembershipData && <View
+                getActiveMembershipData?.body!=null && <View
               style={{
                 flexDirection: 'row',
                 alignItems: 'center',
@@ -405,10 +405,10 @@ const RedeemRewardHistory = ({navigation}) => {
                   style={{ color: 'white', fontSize: 14 ,marginLeft:2}}
                   content={membership}></PoppinsTextMedium>
               </TouchableOpacity>
+              <PlatinumModal isVisible={isSuccessModalVisible} onClose={hideSuccessModal} getActiveMembershipData={getActiveMembershipData} />
 
             </View>
             }
-                <PlatinumModal isVisible={isSuccessModalVisible} onClose={hideSuccessModal} getActiveMembershipData={getActiveMembershipData} />
 
                 </View>
             <View style={{alignItems:"flex-start",justifyContent:"center",width:'100%',top:10}}>
